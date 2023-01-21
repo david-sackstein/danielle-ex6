@@ -1,58 +1,88 @@
 package oop.ex6.main;
 
-import oop.ex6.SyntaxAnalysis.*;
+import oop.ex6.LexicalAnalysis.LexicalException;
+import oop.ex6.SyntaxAnalysis.Compiler;
+import oop.ex6.SyntaxAnalysis.SyntaxException;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Objects;
 
 public class Sjavac {
 
-    public static void main(String[] args) {
-
+    /**
+     * @param args
+     * @throws Exception
+     */
+    public static void main(String[] args) throws Exception {
         try {
-            runFileTests(args[0]);
-            System.out.print("PASSED");
+            String fileName = args[0];
+
+            LinesReader linesReader = new LinesReader();
+            ArrayList<String> lines = linesReader.getLines(fileName);
+
+            for (int i = 1; i < 205; i++) {
+                RunLineTest(lines.get(i - 1));
+            }
+            System.out.printf("PASSED");
+
         } catch (Exception ex) {
             System.out.printf("FAILED : %s\n", ex.getMessage());
         }
     }
 
-    private static void runFileTests(String fileName) throws Exception {
-        LinesReader linesReader = new LinesReader();
-
-        List<String> lines = linesReader.getLines(fileName);
-        for (int i = 1; i < 200; i++) {
-            runLineTest(lines.get(i-1));
-        }
-        System.out.println("Failed: " + failedCount);
-    }
-
-    static int failedCount = 0;
-
-    private static void runLineTest(String line) throws Exception {
+    /**
+     * @param line
+     * @throws Exception
+     */
+    private static void RunLineTest(String line) throws Exception {
         String[] tokens = line.split(" ");
-        if (tokens.length < 2){
+        if (tokens.length < 2) {
             return;
         }
         String testFileName = tokens[0];
-        String expectedResult = tokens[1];
+        String result = tokens[1];
 
-        String actualResult = runTest(testFileName);
+        String actual = RunTest(testFileName);
 
-        if (!actualResult.equals(expectedResult)) {
-            failedCount++;
-            //throw new Exception(testFileName);
+        if (!Objects.equals(actual, result)) {
+            throw new Exception(testFileName);
         }
     }
 
-    private static String runTest(String testFileName) {
+    /**
+     * @param testFileName
+     * @return
+     */
+    private static String RunTest(String testFileName) {
         try {
             new Compiler().compile(testFileName);
-            return "0";
+            return returnZero();
         } catch (IOException ex) {
-            return "2";
+            return returnTwo(ex);
+        } catch (SyntaxException ex) {
+            return returnOne(ex);
+        } catch (LexicalException ex) {
+            return returnOne(ex);
         } catch (Exception ex) {
-            return "1";
+            return returnOne(ex);
         }
+    }
+
+    private static String returnZero() {
+        System.out.println("0");
+        return "0";
+    }
+
+    private static String returnOne(Exception ex) {
+        System.out.println("1");
+        //System.out.printf("%s\n", ex.getMessage());
+        return "1";
+    }
+
+    private static String returnTwo(IOException ex) {
+        System.out.println("2");
+        //System.out.printf("%s\n", ex.getMessage());
+        return "2";
     }
 }

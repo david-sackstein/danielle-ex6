@@ -2,8 +2,16 @@ package oop.ex6.AbstractSyntaxTree;
 
 import java.util.ArrayList;
 
-public class MethodInvocation extends Expression {
+/**
+ * Represents an invocation of a method
+ * An invocation contains a methodName and a list of arguments.
+ */
+public class MethodInvocation {
 
     public String methodName;
-    public ArrayList<Variable> arguments;
+    public ArrayList<TypedValue> arguments;
+
+    public MethodInvocation() {
+        arguments = new ArrayList<TypedValue>();
+    }
 }
