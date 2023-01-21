@@ -24,7 +24,10 @@ public class Sjavac {
         for (int i = 1; i < 200; i++) {
             runLineTest(lines.get(i-1));
         }
+        System.out.println("Failed: " + failedCount);
     }
+
+    static int failedCount = 0;
 
     private static void runLineTest(String line) throws Exception {
         String[] tokens = line.split(" ");
@@ -37,7 +40,8 @@ public class Sjavac {
         String actualResult = runTest(testFileName);
 
         if (!actualResult.equals(expectedResult)) {
-            throw new Exception(testFileName);
+            failedCount++;
+            //throw new Exception(testFileName);
         }
     }
 

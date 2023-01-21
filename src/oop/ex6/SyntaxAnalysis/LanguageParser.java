@@ -5,17 +5,17 @@ import oop.ex6.AbstractSyntaxTree.*;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class SyntaxAnalyzer {
+public class LanguageParser {
 
-    private LexicalAnalyzer lexicalAnalyzer;
+    private final TextParser textParser;
 
-    public SyntaxAnalyzer() {
-        lexicalAnalyzer = new LexicalAnalyzer();
+    public LanguageParser() {
+        textParser = new TextParser();
     }
 
     public Scope parse(String line, Scope scope) throws Exception {
 
-        if (lexicalAnalyzer.isCommentOrEmptyLine(line)) {
+        if (textParser.isCommentOrEmptyLine(line)) {
             return scope;
         }
 
@@ -32,16 +32,16 @@ public class SyntaxAnalyzer {
             return method;
         }
 
-        if (lexicalAnalyzer.isReturnStatement(line)) {
+        if (textParser.isReturnStatement(line)) {
             scope.youHaveReturned();
             return scope;
         }
 
-        if (lexicalAnalyzer.isEndOfBlock(line)) {
+        if (textParser.isEndOfBlock(line)) {
             return scope.yourScopeEnded();
         }
 
-        if (lexicalAnalyzer.isMethodInvocation(line)) {
+        if (textParser.isMethodCall(line)) {
             return scope;
         }
 
@@ -49,7 +49,7 @@ public class SyntaxAnalyzer {
     }
 
     private Method createMethod(String line, Scope scope) throws Exception {
-        ArrayList<ArrayList<String>> arrayLists = lexicalAnalyzer.splitMethod(line);
+        ArrayList<ArrayList<String>> arrayLists = textParser.splitMethod(line);
         if (arrayLists == null) {
             return null;
         }
@@ -85,7 +85,7 @@ public class SyntaxAnalyzer {
         String nameString = argumentTokens.get(start + 2);
         String typeString = argumentTokens.get(start + 1);
 
-        Variable variable = new Variable(nameString, lexicalAnalyzer.getTypeFromString(typeString));
+        Variable variable = new Variable(nameString, textParser.getTypeFromString(typeString));
         variable.isFinal = isFinal;
         variable.isInitialized = true; // because arguments passed to a method must have been initialized
 
@@ -93,27 +93,27 @@ public class SyntaxAnalyzer {
     }
 
     private boolean doAssignments(String line, Scope scope) throws Exception {
-        ArrayList<ArrayList<String>> arrayLists = lexicalAnalyzer.splitAssignmentInt(line);
+        ArrayList<ArrayList<String>> arrayLists = textParser.splitAssignmentInt(line);
         if (arrayLists != null) {
             doAssignments(scope, arrayLists, TypedValue.Type.Int);
             return true;
         }
-        arrayLists = lexicalAnalyzer.splitAssignmentString(line);
+        arrayLists = textParser.splitAssignmentString(line);
         if (arrayLists != null) {
             doAssignments(scope, arrayLists, TypedValue.Type.String);
             return true;
         }
-        arrayLists = lexicalAnalyzer.splitAssignmentDouble(line);
+        arrayLists = textParser.splitAssignmentDouble(line);
         if (arrayLists != null) {
             doAssignments(scope, arrayLists, TypedValue.Type.Double);
             return true;
         }
-        arrayLists = lexicalAnalyzer.splitAssignmentBoolean(line);
+        arrayLists = textParser.splitAssignmentBoolean(line);
         if (arrayLists != null) {
             doAssignments(scope, arrayLists, TypedValue.Type.Boolean);
             return true;
         }
-        arrayLists = lexicalAnalyzer.splitAssignmentChar(line);
+        arrayLists = textParser.splitAssignmentChar(line);
         if (arrayLists != null) {
             doAssignments(scope, arrayLists, TypedValue.Type.Char);
             return true;
@@ -138,27 +138,27 @@ public class SyntaxAnalyzer {
 
     private boolean addVariablesDeclarations(String line, Scope scope) throws Exception {
 
-        ArrayList<ArrayList<String>> tokens = lexicalAnalyzer.splitDeclarationInt(line);
+        ArrayList<ArrayList<String>> tokens = textParser.splitDeclarationInt(line);
         if (tokens != null) {
             addVariablesDeclarations(scope, tokens, TypedValue.Type.Int);
             return true;
         }
-        tokens = lexicalAnalyzer.splitDeclarationString(line);
+        tokens = textParser.splitDeclarationString(line);
         if (tokens != null) {
             addVariablesDeclarations(scope, tokens, TypedValue.Type.String);
             return true;
         }
-        tokens = lexicalAnalyzer.splitDeclarationDouble(line);
+        tokens = textParser.splitDeclarationDouble(line);
         if (tokens != null) {
             addVariablesDeclarations(scope, tokens, TypedValue.Type.Double);
             return true;
         }
-        tokens = lexicalAnalyzer.splitDeclarationBoolean(line);
+        tokens = textParser.splitDeclarationBoolean(line);
         if (tokens != null) {
             addVariablesDeclarations(scope, tokens, TypedValue.Type.Boolean);
             return true;
         }
-        tokens = lexicalAnalyzer.splitDeclarationChar(line);
+        tokens = textParser.splitDeclarationChar(line);
         if (tokens != null) {
             addVariablesDeclarations(scope, tokens, TypedValue.Type.Char);
             return true;
@@ -209,11 +209,11 @@ public class SyntaxAnalyzer {
 
         String rightSide = tokens.get(3);
 
-        if (lexicalAnalyzer.isTypeMatch(expectedType, rightSide)) {
+        if (textParser.isTypeMatch(expectedType, rightSide)) {
             return new TypedValue(expectedType);
         }
 
-        if (!lexicalAnalyzer.isNameOfVariable(rightSide)) {
+        if (!textParser.isNameOfVariable(rightSide)) {
             throw new Exception("Invalid type or variable name");
         }
 

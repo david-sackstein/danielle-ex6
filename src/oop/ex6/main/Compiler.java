@@ -3,14 +3,16 @@ package oop.ex6.main;
 import oop.ex6.AbstractSyntaxTree.*;
 import oop.ex6.SyntaxAnalysis.*;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Compiler {
 
     public void compile(String fileName) throws Exception {
-        ArrayList<String> lines  = new LinesReader().getLines(fileName);
 
-        SyntaxAnalyzer parser = new SyntaxAnalyzer();
+        LinesReader linesReader = new LinesReader();
+        List<String> lines  = linesReader.getLines(fileName);
+
+        LanguageParser parser = new LanguageParser();
 
         GlobalScope globalScope = new GlobalScope();
         Scope scope = globalScope;
