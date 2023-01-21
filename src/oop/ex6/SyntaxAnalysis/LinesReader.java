@@ -4,20 +4,18 @@ import java.util.ArrayList;
 
 public class LinesReader {
     public ArrayList<String> getLines(String fileName) throws IOException {
-        ArrayList<String> lines = new ArrayList<String>();
+        var lines = new ArrayList<String>();
 
-        BufferedReader bufferedReader = getBufferedReader(fileName);
-
-        String line;
-        while ((line = bufferedReader.readLine()) != null) {
-            if (isWhiteSpaceLine(line)){
-                continue;
+        try(BufferedReader bufferedReader = getBufferedReader(fileName)){
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                if (isWhiteSpaceLine(line)){
+                    continue;
+                }
+                lines.add(line);
             }
-            lines.add(line);
+            return lines;
         }
-
-        bufferedReader.close();
-        return lines;
     }
 
     private BufferedReader getBufferedReader(String fileName) throws FileNotFoundException {

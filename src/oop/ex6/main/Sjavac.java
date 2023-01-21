@@ -1,13 +1,9 @@
 package oop.ex6.main;
 
-import oop.ex6.AbstractSyntaxTree.LanguageException;
-import oop.ex6.SyntaxAnalysis.LexicalAnalyzer;
-import oop.ex6.SyntaxAnalysis.LinesReader;
-import oop.ex6.SyntaxAnalysis.SyntaxException;
+import oop.ex6.SyntaxAnalysis.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Objects;
+import java.util.List;
 
 public class Sjavac {
 
@@ -17,7 +13,7 @@ public class Sjavac {
             String fileName = args[0];
 
             LinesReader linesReader = new LinesReader();
-            ArrayList<String> lines = linesReader.getLines(fileName);
+            List<String> lines = linesReader.getLines(fileName);
             for (int i = 1; i < 200; i++) {
                 RunLineTest(lines.get(i-1));
             }
@@ -33,11 +29,11 @@ public class Sjavac {
             return;
         }
         String testFileName = tokens[0];
-        String result = tokens[1];
+        String expectedResult = tokens[1];
 
-        String actual = RunTest(testFileName);
+        String actualResult = RunTest(testFileName);
 
-        if (!Objects.equals(actual, result)) {
+        if (!actualResult.equals(expectedResult)) {
             throw new Exception(testFileName);
         }
     }
@@ -45,32 +41,11 @@ public class Sjavac {
     private static String RunTest(String testFileName) {
         try {
             new Compiler().compile(testFileName);
-            return returnZero();
+            return "0";
         } catch (IOException ex) {
-            return returnTwo(ex);
-        } catch (SyntaxException ex) {
-            return returnOne(ex);
-        } catch (LanguageException ex) {
-            return returnOne(ex);
+            return "2";
         } catch (Exception ex) {
-            return returnOne(ex);
+            return "1";
         }
-    }
-
-    private static String returnZero() {
-        //System.out.println("0");
-        return "0";
-    }
-
-    private static String returnOne(Exception ex) {
-        //System.out.println("1");
-        //System.out.printf("%s\n",ex.getMessage());
-        return "1";
-    }
-
-    private static String returnTwo(IOException ex) {
-        //System.out.println("2");
-        //System.out.printf("%s\n",ex.getMessage());
-        return "2";
     }
 }
