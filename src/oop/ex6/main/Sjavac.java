@@ -8,22 +8,25 @@ import java.util.List;
 public class Sjavac {
 
     public static void main(String[] args) {
-        LexicalAnalyzer.Test();
-        try {
-            String fileName = args[0];
 
-            LinesReader linesReader = new LinesReader();
-            List<String> lines = linesReader.getLines(fileName);
-            for (int i = 1; i < 200; i++) {
-                RunLineTest(lines.get(i-1));
-            }
-            System.out.printf("PASSED");
+        try {
+            runFileTests(args[0]);
+            System.out.print("PASSED");
         } catch (Exception ex) {
             System.out.printf("FAILED : %s\n", ex.getMessage());
         }
     }
 
-    private static void RunLineTest(String line) throws Exception {
+    private static void runFileTests(String fileName) throws Exception {
+        LinesReader linesReader = new LinesReader();
+
+        List<String> lines = linesReader.getLines(fileName);
+        for (int i = 1; i < 200; i++) {
+            runLineTest(lines.get(i-1));
+        }
+    }
+
+    private static void runLineTest(String line) throws Exception {
         String[] tokens = line.split(" ");
         if (tokens.length < 2){
             return;
@@ -31,14 +34,14 @@ public class Sjavac {
         String testFileName = tokens[0];
         String expectedResult = tokens[1];
 
-        String actualResult = RunTest(testFileName);
+        String actualResult = runTest(testFileName);
 
         if (!actualResult.equals(expectedResult)) {
             throw new Exception(testFileName);
         }
     }
 
-    private static String RunTest(String testFileName) {
+    private static String runTest(String testFileName) {
         try {
             new Compiler().compile(testFileName);
             return "0";
