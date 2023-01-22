@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea8df31-8c54-4d9a-a1f6-4e390e6c575b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/RegexDeclarations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/regex/RegexDeclarations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/strings/Declarations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/strings/Declarations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/strings/Literals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/strings/Literals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/strings/Method.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/strings/Method.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/strings/Primitives.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/strings/Primitives.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/AbstractSyntaxTree/BlockScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/ast/BlockScope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/AbstractSyntaxTree/ConditionalScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/ast/ConditionalScope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/AbstractSyntaxTree/GlobalScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/ast/GlobalScope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/AbstractSyntaxTree/MethodDeclaration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/ast/MethodDeclaration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/AbstractSyntaxTree/MethodInvocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/ast/MethodInvocation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/AbstractSyntaxTree/MethodScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/ast/MethodScope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/AbstractSyntaxTree/Scope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/ast/Scope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/AbstractSyntaxTree/TypedValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/ast/TypedValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/AbstractSyntaxTree/Variable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/ast/Variable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/SyntaxAnalysis/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/syntax/Compiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/SyntaxAnalysis/SyntaxAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxAnalyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/SyntaxAnalysis/SyntaxException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/tokenizer/Tokenizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -516,7 +524,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674426795425</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Step 16">
+      <created>1674427553000</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1674427553000</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -592,13 +607,14 @@
     <MESSAGE value="Step 13" />
     <MESSAGE value="Step 14" />
     <MESSAGE value="Step 15" />
-    <option name="LAST_COMMIT_MESSAGE" value="Step 15" />
+    <MESSAGE value="Step 16" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 16" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/oop/ex6/SyntaxAnalysis/TextParser.java</url>
+          <url>file://$PROJECT_DIR$/src/oop/ex6/syntax/TextParser.java</url>
           <line>48</line>
           <option name="timeStamp" value="162" />
         </line-breakpoint>

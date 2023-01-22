@@ -1,4 +1,4 @@
-package oop.ex6.AbstractSyntaxTree;
+package oop.ex6.ast;
 
 import java.util.ArrayList;
 

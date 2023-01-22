@@ -1,4 +1,4 @@
-package oop.ex6.AbstractSyntaxTree;
+package oop.ex6.ast;
 
 /**
  *  Represents a literal (Char, Double, Int, String, Boolean) or a Variable

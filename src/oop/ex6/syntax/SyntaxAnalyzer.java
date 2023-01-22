@@ -1,7 +1,7 @@
-package oop.ex6.SyntaxAnalysis;
+package oop.ex6.syntax;
 
-import oop.ex6.AbstractSyntaxTree.*;
-import oop.ex6.Tokenizer.Tokenizer;
+import oop.ex6.ast.*;
+import oop.ex6.tokenizer.Tokenizer;
 
 import java.util.ArrayList;
 import java.util.Objects;

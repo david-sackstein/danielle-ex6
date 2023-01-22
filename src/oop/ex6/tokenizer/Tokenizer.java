@@ -1,6 +1,6 @@
-package oop.ex6.Tokenizer;
+package oop.ex6.tokenizer;
 
-import oop.ex6.AbstractSyntaxTree.*;
+import oop.ex6.ast.*;
 import oop.ex6.regex.*;
 
 import java.util.ArrayList;

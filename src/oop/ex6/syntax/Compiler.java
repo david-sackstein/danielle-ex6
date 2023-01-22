@@ -1,7 +1,6 @@
-package oop.ex6.SyntaxAnalysis;
+package oop.ex6.syntax;
 
-import oop.ex6.AbstractSyntaxTree.*;
-import oop.ex6.SyntaxAnalysis.*;
+import oop.ex6.ast.*;
 import oop.ex6.main.LinesReader;
 
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
 package oop.ex6.main;
 
-import oop.ex6.SyntaxAnalysis.Compiler;
+import oop.ex6.syntax.Compiler;
 
 import java.io.IOException;
 import java.util.ArrayList;
