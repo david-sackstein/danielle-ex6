@@ -1,6 +1,6 @@
 package oop.ex6.regex;
 
-import oop.ex6.patterns.Declarations;
+import oop.ex6.strings.Declarations;
 
 import java.util.regex.Pattern;
 

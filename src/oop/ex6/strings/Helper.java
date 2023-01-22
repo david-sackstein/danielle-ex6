@@ -1,4 +1,4 @@
-package oop.ex6.patterns;
+package oop.ex6.strings;
 
 public class Helper {
     public static String getList(

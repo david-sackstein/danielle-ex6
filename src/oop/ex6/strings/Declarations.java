@@ -1,4 +1,4 @@
-package oop.ex6.patterns;
+package oop.ex6.strings;
 
 public class Declarations {
     public static final String INT = getLine("int", Assignment.OPTIONAL_INT);
