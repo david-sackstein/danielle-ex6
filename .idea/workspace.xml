@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="633a3afa-ff37-44d3-8aaf-3a42cc184fa9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Declarations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Declarations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Condition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Patterns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Patterns.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Regex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Stam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Stam.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,9 +242,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="oop.ex6.Tokenizer.Condition" />
       <recent name="oop.ex6.Tokenizer.Stam" />
       <recent name="oop.ex6.Tokenizer.Helper" />
-      <recent name="oop.ex6.Tokenizer.Condition" />
       <recent name="oop.ex6.Tokenizer.Declarations" />
       <recent name="equals" />
     </key>
@@ -432,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674420702955</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Step 5">
+      <created>1674422161643</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1674422161643</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -497,7 +501,8 @@
     <MESSAGE value="Step 2" />
     <MESSAGE value="Step 3" />
     <MESSAGE value="Step 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Step 4" />
+    <MESSAGE value="Step 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

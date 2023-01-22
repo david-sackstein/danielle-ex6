@@ -48,6 +48,6 @@ public class Regex {
     public static final Pattern METHOD_DECLARATION = Pattern.compile(Declarations.METHOD);
     public static final Pattern ARGUMENT_VALUE = Pattern.compile(Patterns.ARGUMENT_VALUE);
     public static final Pattern METHOD_INVOCATION = Pattern.compile(Patterns.METHOD_INVOCATION);
-    public static final Pattern CONDITION_BLOCK = Pattern.compile(Patterns.CONDITION_BLOCK);
-    public static final Pattern CONDITION_EXPRESSION = Pattern.compile(Patterns.CONDITION_EXPRESSION);
+    public static final Pattern CONDITION_BLOCK = Pattern.compile(Condition.CONDITION_BLOCK);
+    public static final Pattern CONDITION_EXPRESSION = Pattern.compile(Condition.CONDITION_EXPRESSION);
 }
