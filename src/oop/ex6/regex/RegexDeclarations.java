@@ -1,6 +1,6 @@
 package oop.ex6.regex;
 
-import oop.ex6.strings.Declarations;
+import oop.ex6.strings.*;
 
 import java.util.regex.Pattern;
 
@@ -10,7 +10,7 @@ public class RegexDeclarations {
     public static final Pattern DOUBLE = Pattern.compile(Declarations.DOUBLE);
     public static final Pattern BOOLEAN = Pattern.compile(Declarations.BOOLEAN);
     public static final Pattern CHAR = Pattern.compile(Declarations.CHAR);
-    
-    public static final Pattern ARGUMENT = Pattern.compile(Declarations.ARGUMENT);
-    public static final Pattern METHOD = Pattern.compile(Declarations.METHOD);
+
+    public static final Pattern ARGUMENT = Pattern.compile(Method.ARGUMENT);
+    public static final Pattern METHOD = Pattern.compile(Method.METHOD);
 }

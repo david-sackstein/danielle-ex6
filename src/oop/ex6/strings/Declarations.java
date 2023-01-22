@@ -9,8 +9,7 @@ public class Declarations {
     public static final String BOOLEAN = getLine("boolean", Assignment.OPTIONAL_BOOLEAN);
     public static final String CHAR = getLine("char", Assignment.OPTIONAL_CHAR);
 
-    public static final String ARGUMENT = OPTIONAL_FINAL + ANY_TYPES + WHITESPACES + NAME_OF_VARIABLE;;
-    public static final String METHOD = getMethod();
+    ;
 
     public static String getLine(String typeString, String partialDeclaration) {
         String notLastDeclaration = "(" + partialDeclaration + "," + WHITESPACES + ")";
@@ -23,7 +22,4 @@ public class Declarations {
                 ";" + END_LINE;
     }
 
-    private static String getMethod() {
-        return Helper.getList("void" + WHITESPACES + NAME_OF_METHOD, ARGUMENT, ",", "?", "\\{");
-    }
 }

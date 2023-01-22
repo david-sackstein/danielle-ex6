@@ -3,15 +3,16 @@ package oop.ex6.strings;
 import static oop.ex6.strings.Primitives.*;
 
 public class Helper {
-    public static String getList(
+    public static String getMethodOrCondition(
         String openingToken, String listElement, String delimiter, String repeater, String closingToken) {
 
-        String methodName = START_LINE + openingToken + WHITESPACES;
-        String notLastArgument = "(" + WHITESPACES + listElement + WHITESPACES + delimiter + WHITESPACES + ")";
-        String lastArgument = "(" + WHITESPACES + listElement + WHITESPACES + ")";
-        return methodName + "\\(" + WHITESPACES +
-                notLastArgument + "*" +
-                lastArgument + repeater +
-                "\\)" + WHITESPACES + closingToken + END_LINE;
+        String start = START_LINE + openingToken + WHITESPACES;
+        String expression = WHITESPACES + listElement + WHITESPACES;
+        String notLastExpression = "(" + expression + delimiter + WHITESPACES + ")";
+        String lastExpression = "(" + expression + WHITESPACES + ")";
+        return start + "\\(" + WHITESPACES +
+            notLastExpression + "*" +
+            lastExpression + repeater +
+            "\\)" + WHITESPACES + closingToken + END_LINE;
     }
 }

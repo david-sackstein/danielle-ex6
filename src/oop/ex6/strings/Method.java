@@ -7,6 +7,9 @@ import static oop.ex6.strings.Primitives.*;
  */
 public class Method {
 
+    public static final String ARGUMENT = OPTIONAL_FINAL + ANY_TYPES + WHITESPACES + NAME_OF_VARIABLE;
+    public static final String METHOD = getMethodDeclaration();
+
     public static final String ARGUMENT_VALUE = getArgumentValue();
     public static final String CALL = getCall();
 
@@ -29,5 +32,9 @@ public class Method {
                 "(" + Literals.CHAR + "))";
 
         return WHITESPACES + "(" + literalString + "|" + NAME_OF_VARIABLE + ")";
+    }
+
+    private static String getMethodDeclaration() {
+        return Helper.getMethodOrCondition("void" + WHITESPACES + NAME_OF_METHOD, ARGUMENT, ",", "?", "\\{");
     }
 }

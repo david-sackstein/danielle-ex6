@@ -9,7 +9,7 @@ public class Condition {
     private static String getBlock() {
         String orAnd = "(\\|\\||\\&\\&)";
         String conditionExpression = WHITESPACES + EXPRESSION + WHITESPACES;
-        return Helper.getList("(while|if)", conditionExpression, orAnd, "+", "\\{");
+        return Helper.getMethodOrCondition("(while|if)", conditionExpression, orAnd, "+", "\\{");
     }
 
     private static String getExpression() {
