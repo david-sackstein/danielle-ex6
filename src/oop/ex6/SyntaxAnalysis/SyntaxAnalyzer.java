@@ -1,7 +1,7 @@
 package oop.ex6.SyntaxAnalysis;
 
 import oop.ex6.AbstractSyntaxTree.*;
-import oop.ex6.LexicalAnalysis.LexicalAnalyzer;
+import oop.ex6.Tokenizer.Tokenizer;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -12,10 +12,10 @@ import java.util.Objects;
  */
 public class SyntaxAnalyzer {
 
-    private LexicalAnalyzer lexicalAnalyzer;
+    private Tokenizer tokenizer;
 
     public SyntaxAnalyzer() {
-        lexicalAnalyzer = new LexicalAnalyzer();
+        tokenizer = new Tokenizer();
     }
 
     /**
@@ -32,7 +32,7 @@ public class SyntaxAnalyzer {
      */
     public Scope parse(String line, Scope scope) throws Exception {
 
-        if (lexicalAnalyzer.isCommentOrEmptyLine(line)) {
+        if (tokenizer.isCommentOrEmptyLine(line)) {
             return scope;
         }
 
@@ -53,12 +53,12 @@ public class SyntaxAnalyzer {
             return scope;
         }
 
-        if (lexicalAnalyzer.isReturnStatement(line)) {
+        if (tokenizer.isReturnStatement(line)) {
             scope.youAreReturning();
             return scope;
         }
 
-        if (lexicalAnalyzer.isEndOfBlock(line)) {
+        if (tokenizer.isEndOfBlock(line)) {
             return scope.yourScopeEnded();
         }
 
@@ -67,7 +67,7 @@ public class SyntaxAnalyzer {
             return conditionalBlock;
         }
 
-        lexicalAnalyzer.splitMethodInvocation(line);
+        tokenizer.splitMethodInvocation(line);
 
         throw new Exception("Unrecognized syntax");
     }
@@ -79,7 +79,7 @@ public class SyntaxAnalyzer {
      * @throws Exception
      */
     private MethodScope createMethod(String line, Scope scope) throws Exception {
-        ArrayList<ArrayList<String>> arrayLists = lexicalAnalyzer.splitMethodDeclaration(line);
+        ArrayList<ArrayList<String>> arrayLists = tokenizer.splitMethodDeclaration(line);
         if (arrayLists == null) {
             return null;
         }
@@ -99,7 +99,7 @@ public class SyntaxAnalyzer {
      * @throws Exception
      */
     private boolean doMethodInvocation(String line, Scope scope) throws Exception {
-        ArrayList<ArrayList<String>> arrayLists = lexicalAnalyzer.splitMethodInvocation(line);
+        ArrayList<ArrayList<String>> arrayLists = tokenizer.splitMethodInvocation(line);
         if (arrayLists == null) {
             return false;
         }
@@ -115,7 +115,7 @@ public class SyntaxAnalyzer {
      * @throws Exception
      */
     private ConditionalScope createConditionalBlock(String line, Scope scope) throws Exception {
-        ArrayList<ArrayList<String>> arrayLists = lexicalAnalyzer.splitBlockCondition(line);
+        ArrayList<ArrayList<String>> arrayLists = tokenizer.splitBlockCondition(line);
         if (arrayLists == null) {
             return null;
         }
@@ -138,13 +138,13 @@ public class SyntaxAnalyzer {
 
             String conditionExpression = arrayLists.get(i).get(1);
 
-            if (lexicalAnalyzer.isTypeMatch(TypedValue.Type.Boolean, conditionExpression) ||
-                    lexicalAnalyzer.isTypeMatch(TypedValue.Type.Int, conditionExpression) ||
-                    lexicalAnalyzer.isTypeMatch(TypedValue.Type.Double, conditionExpression)) {
+            if (tokenizer.isTypeMatch(TypedValue.Type.Boolean, conditionExpression) ||
+                    tokenizer.isTypeMatch(TypedValue.Type.Int, conditionExpression) ||
+                    tokenizer.isTypeMatch(TypedValue.Type.Double, conditionExpression)) {
                 continue;
             }
 
-            if (!lexicalAnalyzer.isNameOfVariable(conditionExpression)) {
+            if (!tokenizer.isNameOfVariable(conditionExpression)) {
                 throw new Exception("The regex failed");
             }
 
@@ -188,19 +188,19 @@ public class SyntaxAnalyzer {
      * @throws Exception
      */
     private TypedValue createTypedValueArgument(Scope scope, String argumentToken) throws Exception {
-        if (lexicalAnalyzer.isTypeMatch(TypedValue.Type.Int, argumentToken)){
+        if (tokenizer.isTypeMatch(TypedValue.Type.Int, argumentToken)){
             return new TypedValue(TypedValue.Type.Int);
         }
-        if (lexicalAnalyzer.isTypeMatch(TypedValue.Type.Double, argumentToken)){
+        if (tokenizer.isTypeMatch(TypedValue.Type.Double, argumentToken)){
             return new TypedValue(TypedValue.Type.Double);
         }
-        if (lexicalAnalyzer.isTypeMatch(TypedValue.Type.String, argumentToken)){
+        if (tokenizer.isTypeMatch(TypedValue.Type.String, argumentToken)){
             return new TypedValue(TypedValue.Type.String);
         }
-        if (lexicalAnalyzer.isTypeMatch(TypedValue.Type.Char, argumentToken)){
+        if (tokenizer.isTypeMatch(TypedValue.Type.Char, argumentToken)){
             return new TypedValue(TypedValue.Type.Char);
         }
-        if (lexicalAnalyzer.isTypeMatch(TypedValue.Type.Boolean, argumentToken)){
+        if (tokenizer.isTypeMatch(TypedValue.Type.Boolean, argumentToken)){
             return new TypedValue(TypedValue.Type.Boolean);
         }
         Variable variable = scope.findVariable(argumentToken, TypedValue.Type.Any);
@@ -246,7 +246,7 @@ public class SyntaxAnalyzer {
         String nameString = argumentTokens.get(start + 2);
         String typeString = argumentTokens.get(start + 1);
 
-        TypedValue.Type type = lexicalAnalyzer.getTypeFromString(typeString);
+        TypedValue.Type type = tokenizer.getTypeFromString(typeString);
         Variable variable = new Variable(nameString, type);
         variable.isFinal = isFinal;
         variable.addInitializer(new TypedValue(type)); // because arguments passed to a method must have been initialized
@@ -261,27 +261,27 @@ public class SyntaxAnalyzer {
      * @throws Exception
      */
     private boolean doAssignments(String line, Scope scope) throws Exception {
-        ArrayList<ArrayList<String>> arrayLists = lexicalAnalyzer.splitAssignmentInt(line);
+        ArrayList<ArrayList<String>> arrayLists = tokenizer.splitAssignmentInt(line);
         if (arrayLists != null) {
             doAssignments(scope, arrayLists, TypedValue.Type.Int);
             return true;
         }
-        arrayLists = lexicalAnalyzer.splitAssignmentString(line);
+        arrayLists = tokenizer.splitAssignmentString(line);
         if (arrayLists != null) {
             doAssignments(scope, arrayLists, TypedValue.Type.String);
             return true;
         }
-        arrayLists = lexicalAnalyzer.splitAssignmentDouble(line);
+        arrayLists = tokenizer.splitAssignmentDouble(line);
         if (arrayLists != null) {
             doAssignments(scope, arrayLists, TypedValue.Type.Double);
             return true;
         }
-        arrayLists = lexicalAnalyzer.splitAssignmentBoolean(line);
+        arrayLists = tokenizer.splitAssignmentBoolean(line);
         if (arrayLists != null) {
             doAssignments(scope, arrayLists, TypedValue.Type.Boolean);
             return true;
         }
-        arrayLists = lexicalAnalyzer.splitAssignmentChar(line);
+        arrayLists = tokenizer.splitAssignmentChar(line);
         if (arrayLists != null) {
             doAssignments(scope, arrayLists, TypedValue.Type.Char);
             return true;
@@ -320,27 +320,27 @@ public class SyntaxAnalyzer {
      */
     private boolean addVariablesDeclarations(String line, Scope scope) throws Exception {
 
-        ArrayList<ArrayList<String>> tokens = lexicalAnalyzer.splitDeclarationInt(line);
+        ArrayList<ArrayList<String>> tokens = tokenizer.splitDeclarationInt(line);
         if (tokens != null) {
             addVariablesDeclarations(scope, tokens, TypedValue.Type.Int);
             return true;
         }
-        tokens = lexicalAnalyzer.splitDeclarationString(line);
+        tokens = tokenizer.splitDeclarationString(line);
         if (tokens != null) {
             addVariablesDeclarations(scope, tokens, TypedValue.Type.String);
             return true;
         }
-        tokens = lexicalAnalyzer.splitDeclarationDouble(line);
+        tokens = tokenizer.splitDeclarationDouble(line);
         if (tokens != null) {
             addVariablesDeclarations(scope, tokens, TypedValue.Type.Double);
             return true;
         }
-        tokens = lexicalAnalyzer.splitDeclarationBoolean(line);
+        tokens = tokenizer.splitDeclarationBoolean(line);
         if (tokens != null) {
             addVariablesDeclarations(scope, tokens, TypedValue.Type.Boolean);
             return true;
         }
-        tokens = lexicalAnalyzer.splitDeclarationChar(line);
+        tokens = tokenizer.splitDeclarationChar(line);
         if (tokens != null) {
             addVariablesDeclarations(scope, tokens, TypedValue.Type.Char);
             return true;
@@ -405,11 +405,11 @@ public class SyntaxAnalyzer {
 
         String rightSide = tokens.get(3);
 
-        if (lexicalAnalyzer.isTypeMatch(expectedType, rightSide)) {
+        if (tokenizer.isTypeMatch(expectedType, rightSide)) {
             return new TypedValue(expectedType);
         }
 
-        if (!lexicalAnalyzer.isNameOfVariable(rightSide)) {
+        if (!tokenizer.isNameOfVariable(rightSide)) {
             throw new Exception("Invalid type or variable methodName");
         }
 

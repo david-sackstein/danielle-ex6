@@ -1,3 +1,0 @@
-void foo (int y) {
-	return 1;
-}

@@ -1,8 +1,258 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="633a3afa-ff37-44d3-8aaf-3a42cc184fa9" name="Default" comment="Updated from">
+    <list default="true" id="633a3afa-ff37-44d3-8aaf-3a42cc184fa9" name="Default" comment="Step 1">
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Regex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test001.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test001.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test002.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test002.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test003.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test003.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test004.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test004.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test005.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test005.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test006.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test006.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test007.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test007.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test008.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test008.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test009.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test009.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test011.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test011.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test012.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test012.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test013.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test013.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test014.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test014.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test015.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test015.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test016.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test016.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test017.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test017.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test018.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test018.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test019.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test019.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test021.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test021.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test022.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test022.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test023.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test023.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test024.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test024.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test025.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test025.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test026.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test026.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test027.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test027.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test028.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test028.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test029.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test029.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test030.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test030.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test031.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test031.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test032.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test032.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test033.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test033.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test034.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test034.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test035.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test035.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test036.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test036.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test037.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test037.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test038.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test038.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test039.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test039.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test041.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test041.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test042.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test042.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test043.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test043.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test044.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test044.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test045.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test045.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test046.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test046.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test047.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test047.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test048.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test048.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test049.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test049.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test050.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test050.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test051.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test051.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test052.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test052.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test053.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test053.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test054.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test054.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test055.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test055.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test056.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test056.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test057.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test057.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test058.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test058.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test059.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test059.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test061.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test061.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test062.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test062.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test063.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test063.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test064.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test064.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test065.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test065.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test066.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test066.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test067.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test067.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test101.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test101.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test102.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test102.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test103.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test103.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test104.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test104.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test105.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test105.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test106.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test106.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test107.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test107.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test108.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test108.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test109.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test109.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test110.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test110.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test111.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test111.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test112.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test112.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test113.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test113.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test114.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test114.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test115.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test115.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test116.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test116.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test117.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test117.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test201.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test201.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test202.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test202.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test203.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test203.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test204.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test204.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test205.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test205.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test206.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test206.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test207.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test207.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test208.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test208.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test209.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test209.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test211.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test211.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test212.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test212.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test213.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test213.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test214.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test214.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test215.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test215.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test216.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test216.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test217.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test217.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test218.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test218.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test219.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test219.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test221.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test221.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test222.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test222.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test223.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test223.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test224.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test224.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test225.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test225.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test226.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test226.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test227.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test227.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test231.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test231.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test232.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test232.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test233.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test233.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test234.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test234.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test235.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test235.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test236.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test236.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test237.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test237.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test238.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test238.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test239.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test239.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test241.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test241.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test242.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test242.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test243.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test243.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test244.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test244.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test245.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test245.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test246.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test246.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test247.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test247.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test248.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test248.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test249.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test249.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test250.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test250.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test251.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test251.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test252.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test252.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test253.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test253.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test254.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test254.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test255.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test255.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test257.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test257.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test261.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test261.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test262.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test262.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test263.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test263.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test264.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test264.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test265.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test265.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test266.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test266.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test267.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test267.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test268.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test268.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test269.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test269.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test270.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test270.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test271.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test271.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test272.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test272.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test273.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test273.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test274.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test274.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test291.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test291.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test301.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test301.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test302.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test302.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test303.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test303.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test305.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test305.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test306.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test306.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test307.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test307.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test308.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test308.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test309.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test309.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test310.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test310.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test311.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test311.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test312.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test312.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test313.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test313.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test314.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test314.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test315.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test315.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test316.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test316.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test321.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test321.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test322.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test322.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test323.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test323.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test324.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test324.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test325.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test325.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test326.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test326.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test327.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test327.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test328.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test328.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test401.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test401.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test402.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test402.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test403.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test403.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test404.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test404.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test405.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test405.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test406.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test406.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test407.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test407.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test408.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test408.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test409.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test409.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test410.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test410.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test411.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test411.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test412.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test412.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test413.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test413.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test414.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test414.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test415.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test415.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test416.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test416.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test417.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test417.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test418.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test418.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test420.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test420.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test421.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test421.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test422.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test422.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test423.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test423.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test425.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test425.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test427.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test427.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test428.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test428.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test429.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test429.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test430.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test430.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test431.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test431.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test432.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test432.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test433.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test433.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test434.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test434.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test435.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test435.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test436.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test436.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test437.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test437.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test438.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test438.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test439.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test439.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test440.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test440.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test441.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test441.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test442.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test442.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test451.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test451.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test452.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test452.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test453.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test453.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test454.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test454.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test455.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test455.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test456.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test456.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test457.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test457.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test458.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test458.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test459.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test459.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test460.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test460.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test461.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test461.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test462.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test462.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test463.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test463.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test464.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test464.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test465.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test465.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test466.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test466.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test467.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test467.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test468.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test468.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test469.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test469.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test470.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test470.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test471.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test471.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test472.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test472.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test473.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test473.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test474.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test474.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test475.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test475.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test476.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test476.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test477.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test477.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test501.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test501.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test502.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test502.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test503.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test503.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test504.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test504.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test505.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ex6/ex6_files/tests/test505.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/LexicalException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Patterns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Patterns.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/RegexStrings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Tokenizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,6 +558,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="ex6" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -337,7 +594,7 @@
       <updated>1497252772658</updated>
       <workItem from="1497252776659" duration="4277000" />
       <workItem from="1674261568192" duration="9469000" />
-      <workItem from="1674296426434" duration="941000" />
+      <workItem from="1674296426434" duration="1761000" />
     </task>
     <task id="LOCAL-00001" summary="refactored LinesReader">
       <created>1674291570228</created>
@@ -374,7 +631,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674296289967</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="from danna">
+      <created>1674418399295</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1674418399295</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Step 1">
+      <created>1674418964555</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1674418964555</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -422,7 +693,10 @@
     <MESSAGE value="refactored LinesReader" />
     <MESSAGE value="refactored main" />
     <MESSAGE value="refactored Patterns" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored Patterns" />
+    <MESSAGE value="Updated from" />
+    <MESSAGE value="from danna" />
+    <MESSAGE value="Step 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
