@@ -1,6 +1,7 @@
 package oop.ex6.Tokenizer;
 
 import oop.ex6.AbstractSyntaxTree.*;
+import oop.ex6.regex.Regex;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;

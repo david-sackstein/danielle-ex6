@@ -1,4 +1,4 @@
-package oop.ex6.Tokenizer;
+package oop.ex6.regex;
 
 public class Condition {
     public static final String EXPRESSION = getExpression();

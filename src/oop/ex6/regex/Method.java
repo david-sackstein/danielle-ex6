@@ -1,4 +1,4 @@
-package oop.ex6.Tokenizer;
+package oop.ex6.regex;
 
 /**
  * RegexStrings generates all the regex strings required by the RegexFactory

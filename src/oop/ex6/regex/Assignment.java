@@ -1,4 +1,4 @@
-package oop.ex6.Tokenizer;
+package oop.ex6.regex;
 
 public class Assignment {
     public static final String INT_RIGHT_SIDE = getRightSide(Literals.INT);

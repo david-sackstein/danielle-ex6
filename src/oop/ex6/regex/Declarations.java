@@ -1,4 +1,4 @@
-package oop.ex6.Tokenizer;
+package oop.ex6.regex;
 
 public class Declarations {
     public static final String INT = getLine("int", Assignment.OPTIONAL_INT);

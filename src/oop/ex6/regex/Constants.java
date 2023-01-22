@@ -1,4 +1,4 @@
-package oop.ex6.Tokenizer;
+package oop.ex6.regex;
 
 public class Constants {
     public static final String ANY_WHITESPACES = "\\s*";
