@@ -11,4 +11,7 @@ public class Stam {
     public static final String EMPTY_LINE = START_LINE;
     public static final String DIGIT = "[0-9]";
 
+    public static final String NAME_OF_VARIABLE = "(_\\w+|[A-Za-z]+[\\w]*)";
+    public static final String NAME_OF_METHOD = "([A-Za-z]+[\\w]*)" + ANY_WHITESPACES;
+
 }
