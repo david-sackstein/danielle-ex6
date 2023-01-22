@@ -1,4 +1,4 @@
-package oop.ex6.regex;
+package oop.ex6.patterns;
 
 public class Constants {
     public static final String ANY_WHITESPACES = "\\s*";

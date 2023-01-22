@@ -1,4 +1,4 @@
-package oop.ex6.regex;
+package oop.ex6.patterns;
 
 public class Assignment {
     public static final String INT_RIGHT_SIDE = getRightSide(Literals.INT);

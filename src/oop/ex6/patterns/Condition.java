@@ -1,4 +1,4 @@
-package oop.ex6.regex;
+package oop.ex6.patterns;
 
 public class Condition {
     public static final String EXPRESSION = getExpression();

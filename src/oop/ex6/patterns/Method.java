@@ -1,4 +1,4 @@
-package oop.ex6.regex;
+package oop.ex6.patterns;
 
 /**
  * RegexStrings generates all the regex strings required by the RegexFactory

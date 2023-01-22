@@ -2,15 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea8df31-8c54-4d9a-a1f6-4e390e6c575b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/regex/Assignment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Condition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/regex/Condition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/regex/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Declarations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/regex/Declarations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/regex/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Literals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/regex/Literals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Method.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/regex/Method.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/regex/Regex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/regex/Assign.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/regex/Block.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/regex/Declare.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/regex/Literal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Tokenizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Assignment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Condition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Condition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Declarations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Declarations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Literals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Literals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Method.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Method.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/regex/Regex.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,11 +253,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="oop.ex6.regex.Block" />
+      <recent name="oop.ex6.regex.Literal" />
+      <recent name="oop.ex6.regex.Declare" />
+      <recent name="oop.ex6.regex.Assign" />
       <recent name="oop.ex6.Tokenizer.Declarations" />
-      <recent name="oop.ex6.Tokenizer.Condition" />
-      <recent name="oop.ex6.Tokenizer.Stam" />
-      <recent name="oop.ex6.Tokenizer.Helper" />
-      <recent name="equals" />
     </key>
     <key name="IntroduceConstantDialog.RECENTS_KEY">
       <recent name="oop.ex6.SyntaxAnalysis.LexicalAnalyzer" />
@@ -449,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674422215581</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Step 7">
+      <created>1674422781366</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1674422781366</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -516,7 +528,8 @@
     <MESSAGE value="Step 4" />
     <MESSAGE value="Step 5" />
     <MESSAGE value="Step 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="Step 6" />
+    <MESSAGE value="Step 7" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 7" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,4 +1,4 @@
-package oop.ex6.regex;
+package oop.ex6.patterns;
 
 public class Literals {
     public static final String INT = "-?" + Constants.ANY_WHITESPACES + Constants.DIGIT + "+";

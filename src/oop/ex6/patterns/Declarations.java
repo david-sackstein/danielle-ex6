@@ -1,4 +1,4 @@
-package oop.ex6.regex;
+package oop.ex6.patterns;
 
 public class Declarations {
     public static final String INT = getLine("int", Assignment.OPTIONAL_INT);
