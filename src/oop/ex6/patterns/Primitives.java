@@ -1,6 +1,6 @@
 package oop.ex6.patterns;
 
-public class Constants {
+public class Primitives {
     public static final String ANY_WHITESPACES = "\\s*";
     public static final String DIGIT = "[0-9]";
     public static final String NAME_OF_VARIABLE = "(_\\w+|[A-Za-z]+[\\w]*)";

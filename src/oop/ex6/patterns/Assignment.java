@@ -19,21 +19,21 @@ public class Assignment {
     public static final String BOOLEAN = getSingle(BOOLEAN_RIGHT_SIDE);
     public static final String CHAR = getSingle(CHAR_RIGHT_SIDE);
 
-    public static final String INT_LINE = Constants.START_LINE + "(" + INT + ");";
-    public static final String STRING_LINE = Constants.START_LINE + "(" + STRING + ");";
-    public static final String DOUBLE_LINE = Constants.START_LINE + "(" + DOUBLE + ");";
-    public static final String BOOLEAN_LINE = Constants.START_LINE + "(" + BOOLEAN + ");";
-    public static final String CHAR_LINE = Constants.START_LINE + "(" + CHAR + ");";
+    public static final String INT_LINE = Primitives.START_LINE + "(" + INT + ");";
+    public static final String STRING_LINE = Primitives.START_LINE + "(" + STRING + ");";
+    public static final String DOUBLE_LINE = Primitives.START_LINE + "(" + DOUBLE + ");";
+    public static final String BOOLEAN_LINE = Primitives.START_LINE + "(" + BOOLEAN + ");";
+    public static final String CHAR_LINE = Primitives.START_LINE + "(" + CHAR + ");";
 
     private static String getSingleOptional(String rightSide) {
-        return Constants.NAME_OF_VARIABLE + rightSide + "?" + Constants.ANY_WHITESPACES;
+        return Primitives.NAME_OF_VARIABLE + rightSide + "?" + Primitives.ANY_WHITESPACES;
     }
 
     private static String getSingle(String rightSide) {
-        return Constants.NAME_OF_VARIABLE + rightSide + Constants.ANY_WHITESPACES;
+        return Primitives.NAME_OF_VARIABLE + rightSide + Primitives.ANY_WHITESPACES;
     }
 
     private static String getRightSide(String literalString) {
-        return "(" + Constants.ANY_WHITESPACES + "=" + Constants.ANY_WHITESPACES + "(" + literalString + "|" + Constants.NAME_OF_VARIABLE + "))";
+        return "(" + Primitives.ANY_WHITESPACES + "=" + Primitives.ANY_WHITESPACES + "(" + literalString + "|" + Primitives.NAME_OF_VARIABLE + "))";
     }
 }

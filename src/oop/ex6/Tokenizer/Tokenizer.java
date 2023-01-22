@@ -14,20 +14,20 @@ import java.util.regex.Pattern;
 public class Tokenizer {
 
     public boolean isCommentOrEmptyLine(String line) {
-        return Regex.COMMENT_LINE.matcher(line).matches() ||
-                Regex.EMPTY_LINE.matcher(line).matches();
+        return RegexPrimitives.COMMENT_LINE.matcher(line).matches() ||
+                RegexPrimitives.EMPTY_LINE.matcher(line).matches();
     }
 
     public boolean isReturnStatement(String line) {
-        return Regex.RETURN_STATEMENT.matcher(line).matches();
+        return RegexPrimitives.RETURN_STATEMENT.matcher(line).matches();
     }
 
     public boolean isEndOfBlock(String line) {
-        return Regex.END_OF_BLOCK.matcher(line).matches();
+        return RegexPrimitives.END_OF_BLOCK.matcher(line).matches();
     }
 
     public boolean isNameOfVariable(String token) {
-        return Regex.NAME_OF_VARIABLE.matcher(token).matches();
+        return RegexPrimitives.NAME_OF_VARIABLE.matcher(token).matches();
     }
 
     public boolean isTypeMatch(TypedValue.Type expectedType, String rightSide) {
@@ -50,55 +50,55 @@ public class Tokenizer {
     }
 
     public ArrayList<ArrayList<String>> splitDeclarationInt(String line) {
-        return splitDeclaration(line, Declare.DECLARATION_INT, Assign.OPTIONAL_ASSIGNMENT_INT);
+        return splitDeclaration(line, RegexDeclarations.DECLARATION_INT, RegexAssignments.OPTIONAL_ASSIGNMENT_INT);
     }
 
     public ArrayList<ArrayList<String>> splitDeclarationString(String line) {
-        return splitDeclaration(line, Declare.DECLARATION_STRING, Assign.OPTIONAL_ASSIGNMENT_STRING);
+        return splitDeclaration(line, RegexDeclarations.DECLARATION_STRING, RegexAssignments.OPTIONAL_ASSIGNMENT_STRING);
     }
 
     public ArrayList<ArrayList<String>> splitDeclarationBoolean(String line) {
-        return splitDeclaration(line, Declare.DECLARATION_BOOLEAN, Assign.OPTIONAL_ASSIGNMENT_BOOLEAN);
+        return splitDeclaration(line, RegexDeclarations.DECLARATION_BOOLEAN, RegexAssignments.OPTIONAL_ASSIGNMENT_BOOLEAN);
     }
 
     public ArrayList<ArrayList<String>> splitDeclarationChar(String line) {
-        return splitDeclaration(line, Declare.DECLARATION_CHAR, Assign.OPTIONAL_ASSIGNMENT_CHAR);
+        return splitDeclaration(line, RegexDeclarations.DECLARATION_CHAR, RegexAssignments.OPTIONAL_ASSIGNMENT_CHAR);
     }
 
     public ArrayList<ArrayList<String>> splitDeclarationDouble(String line) {
-        return splitDeclaration(line, Declare.DECLARATION_DOUBLE, Assign.OPTIONAL_ASSIGNMENT_DOUBLE);
+        return splitDeclaration(line, RegexDeclarations.DECLARATION_DOUBLE, RegexAssignments.OPTIONAL_ASSIGNMENT_DOUBLE);
     }
 
     public ArrayList<ArrayList<String>> splitAssignmentInt(String line) {
-        return splitAssignmentLine(line, Assign.ASSIGNMENT_INT_LINE, Assign.ASSIGNMENT_INT);
+        return splitAssignmentLine(line, RegexAssignments.ASSIGNMENT_INT_LINE, RegexAssignments.ASSIGNMENT_INT);
     }
 
     public ArrayList<ArrayList<String>> splitAssignmentString(String line) {
-        return splitAssignmentLine(line, Assign.ASSIGNMENT_STRING_LINE, Assign.ASSIGNMENT_STRING);
+        return splitAssignmentLine(line, RegexAssignments.ASSIGNMENT_STRING_LINE, RegexAssignments.ASSIGNMENT_STRING);
     }
 
     public ArrayList<ArrayList<String>> splitAssignmentBoolean(String line) {
-        return splitAssignmentLine(line, Assign.ASSIGNMENT_BOOLEAN_LINE, Assign.ASSIGNMENT_BOOLEAN);
+        return splitAssignmentLine(line, RegexAssignments.ASSIGNMENT_BOOLEAN_LINE, RegexAssignments.ASSIGNMENT_BOOLEAN);
     }
 
     public ArrayList<ArrayList<String>> splitAssignmentChar(String line) {
-        return splitAssignmentLine(line, Assign.ASSIGNMENT_CHAR_LINE, Assign.ASSIGNMENT_CHAR);
+        return splitAssignmentLine(line, RegexAssignments.ASSIGNMENT_CHAR_LINE, RegexAssignments.ASSIGNMENT_CHAR);
     }
 
     public ArrayList<ArrayList<String>> splitAssignmentDouble(String line) {
-        return splitAssignmentLine(line, Assign.ASSIGNMENT_DOUBLE_LINE, Assign.ASSIGNMENT_DOUBLE);
+        return splitAssignmentLine(line, RegexAssignments.ASSIGNMENT_DOUBLE_LINE, RegexAssignments.ASSIGNMENT_DOUBLE);
     }
 
     public ArrayList<ArrayList<String>> splitMethodDeclaration(String line) {
-        return splitMethod(line, Declare.METHOD_DECLARATION, Declare.ARGUMENT_DECLARATION);
+        return splitMethod(line, RegexDeclarations.METHOD_DECLARATION, RegexDeclarations.ARGUMENT_DECLARATION);
     }
 
     public ArrayList<ArrayList<String>> splitMethodInvocation(String line) {
-        return splitMethod(line, Block.METHOD_INVOCATION, Block.ARGUMENT_VALUE);
+        return splitMethod(line, RegexBlocks.METHOD_INVOCATION, RegexBlocks.ARGUMENT_VALUE);
     }
 
     public ArrayList<ArrayList<String>> splitBlockCondition(String line) {
-        return splitDeclaration(line, Block.CONDITION_BLOCK, Block.CONDITION_EXPRESSION);
+        return splitDeclaration(line, RegexBlocks.CONDITION_BLOCK, RegexBlocks.CONDITION_EXPRESSION);
     }
 
     public static TypedValue.Type getTypeFromString(String typeString) throws Exception {
@@ -206,22 +206,22 @@ public class Tokenizer {
     }
 
     private boolean isInt(String token) {
-        return Literal.INT_LITERAL.matcher(token).matches();
+        return RegexLiterals.INT_LITERAL.matcher(token).matches();
     }
 
     private boolean isBoolean(String token) {
-        return Literal.BOOLEAN_LITERAL.matcher(token).matches();
+        return RegexLiterals.BOOLEAN_LITERAL.matcher(token).matches();
     }
 
     private boolean isDouble(String token) {
-        return Literal.DOUBLE_LITERAL.matcher(token).matches();
+        return RegexLiterals.DOUBLE_LITERAL.matcher(token).matches();
     }
 
     private boolean isString(String token) {
-        return Literal.STRING_LITERAL.matcher(token).matches();
+        return RegexLiterals.STRING_LITERAL.matcher(token).matches();
     }
 
     private boolean isChar(String token) {
-        return Literal.CHAR_LITERAL.matcher(token).matches();
+        return RegexLiterals.CHAR_LITERAL.matcher(token).matches();
     }
 }

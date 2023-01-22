@@ -2,20 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea8df31-8c54-4d9a-a1f6-4e390e6c575b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/oop/ex6/regex/Assign.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/oop/ex6/regex/Block.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/oop/ex6/regex/Declare.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/oop/ex6/regex/Literal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Tokenizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Assignment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Condition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Condition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Declarations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Declarations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Literals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Literals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Method.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Method.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/regex/Regex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/patterns/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Assignment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/patterns/Condition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Condition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/patterns/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Primitives.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/patterns/Declarations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Declarations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/patterns/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/patterns/Literals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Literals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/patterns/Method.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/patterns/Method.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Assign.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/regex/RegexAssignments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/regex/RegexBlocks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Declare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/regex/RegexDeclarations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Literal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/regex/RegexLiterals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/Regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/regex/RegexPrimitives.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -461,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674422781366</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Step 8">
+      <created>1674423263888</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1674423263888</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -529,7 +536,8 @@
     <MESSAGE value="Step 5" />
     <MESSAGE value="Step 6" />
     <MESSAGE value="Step 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="Step 7" />
+    <MESSAGE value="Step 8" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 8" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

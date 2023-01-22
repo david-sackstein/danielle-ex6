@@ -4,7 +4,7 @@ import oop.ex6.patterns.Literals;
 
 import java.util.regex.Pattern;
 
-public class Literal {
+public class RegexLiterals {
     public static final Pattern INT_LITERAL = Pattern.compile(Literals.INT);
     public static final Pattern DOUBLE_LITERAL = Pattern.compile(Literals.DOUBLE);
     public static final Pattern STRING_LITERAL = Pattern.compile(Literals.STRING);

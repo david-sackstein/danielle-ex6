@@ -6,12 +6,12 @@ public class Condition {
 
     private static String getBlock() {
         String orAnd = "(\\|\\||\\&\\&)";
-        String conditionExpression = Constants.ANY_WHITESPACES + EXPRESSION + Constants.ANY_WHITESPACES;
+        String conditionExpression = Primitives.ANY_WHITESPACES + EXPRESSION + Primitives.ANY_WHITESPACES;
         return Helper.getList("(while|if)", conditionExpression, orAnd, "+", "\\{");
     }
 
     private static String getExpression() {
         String literalString = "(" + Literals.INT + "|" + Literals.DOUBLE + "|" + Literals.BOOLEAN + ")";
-        return "(" + literalString + "|" + Constants.NAME_OF_VARIABLE + ")";
+        return "(" + literalString + "|" + Primitives.NAME_OF_VARIABLE + ")";
     }
 }

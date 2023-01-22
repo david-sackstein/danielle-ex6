@@ -4,7 +4,7 @@ import oop.ex6.patterns.Declarations;
 
 import java.util.regex.Pattern;
 
-public class Declare {
+public class RegexDeclarations {
     public static final Pattern DECLARATION_INT = Pattern.compile(Declarations.INT);
     public static final Pattern DECLARATION_STRING = Pattern.compile(Declarations.STRING);
     public static final Pattern DECLARATION_DOUBLE = Pattern.compile(Declarations.DOUBLE);

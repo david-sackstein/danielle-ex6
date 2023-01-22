@@ -9,13 +9,13 @@ public class Method {
     public static final String CALL = getCall();
 
     private static String getCall() {
-        String methodName = Constants.START_LINE + Constants.NAME_OF_METHOD;
-        String notLastArgument = "(" + ARGUMENT_VALUE + Constants.ANY_WHITESPACES + ")";
-        String lastArgument = "(,"+ Constants.ANY_WHITESPACES + ARGUMENT_VALUE + Constants.ANY_WHITESPACES + ")";
+        String methodName = Primitives.START_LINE + Primitives.NAME_OF_METHOD;
+        String notLastArgument = "(" + ARGUMENT_VALUE + Primitives.ANY_WHITESPACES + ")";
+        String lastArgument = "(,"+ Primitives.ANY_WHITESPACES + ARGUMENT_VALUE + Primitives.ANY_WHITESPACES + ")";
         return methodName + "\\(" +
                 notLastArgument + "?" +
                 lastArgument + "*" +
-                "\\)" + Constants.ANY_WHITESPACES + ";" + Constants.END_LINE;
+                "\\)" + Primitives.ANY_WHITESPACES + ";" + Primitives.END_LINE;
     }
 
     private static String getArgumentValue() {
@@ -26,7 +26,6 @@ public class Method {
                 "(" + Literals.BOOLEAN + ")|" +
                 "(" + Literals.CHAR + "))";
 
-        return Constants.ANY_WHITESPACES + "(" + literalString + "|" + Constants.NAME_OF_VARIABLE + ")";
+        return Primitives.ANY_WHITESPACES + "(" + literalString + "|" + Primitives.NAME_OF_VARIABLE + ")";
     }
-
 }

@@ -4,7 +4,7 @@ import oop.ex6.patterns.Assignment;
 
 import java.util.regex.Pattern;
 
-public class Assign {
+public class RegexAssignments {
     public static final Pattern ASSIGNMENT_INT = Pattern.compile(Assignment.INT);
     public static final Pattern ASSIGNMENT_STRING = Pattern.compile(Assignment.STRING);
     public static final Pattern ASSIGNMENT_DOUBLE = Pattern.compile(Assignment.DOUBLE);
