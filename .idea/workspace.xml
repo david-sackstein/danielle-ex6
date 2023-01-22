@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="633a3afa-ff37-44d3-8aaf-3a42cc184fa9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Condition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Patterns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Patterns.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Assignment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Condition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Condition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Declarations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Declarations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Literals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Literals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Patterns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Method.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Regex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Stam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Constants.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,10 +248,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="oop.ex6.Tokenizer.Declarations" />
       <recent name="oop.ex6.Tokenizer.Condition" />
       <recent name="oop.ex6.Tokenizer.Stam" />
       <recent name="oop.ex6.Tokenizer.Helper" />
-      <recent name="oop.ex6.Tokenizer.Declarations" />
       <recent name="equals" />
     </key>
     <key name="IntroduceConstantDialog.RECENTS_KEY">
@@ -436,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674422161643</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Step 6">
+      <created>1674422215581</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1674422215581</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -502,7 +515,8 @@
     <MESSAGE value="Step 3" />
     <MESSAGE value="Step 4" />
     <MESSAGE value="Step 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Step 5" />
+    <MESSAGE value="Step 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -7,10 +7,10 @@ import java.util.regex.Pattern;
  * The compilation of each regex is performed only once throughout the program
  */
 public class Regex {
-    public static final Pattern EMPTY_LINE = Pattern.compile(Stam.EMPTY_LINE);
-    public static final Pattern COMMENT_LINE = Pattern.compile(Stam.COMMENT_LINE);
-    public static final Pattern RETURN_STATEMENT = Pattern.compile(Stam.RETURN_STATEMENT);
-    public static final Pattern END_OF_BLOCK = Pattern.compile(Stam.END_OF_BLOCK);
+    public static final Pattern EMPTY_LINE = Pattern.compile(Constants.EMPTY_LINE);
+    public static final Pattern COMMENT_LINE = Pattern.compile(Constants.COMMENT_LINE);
+    public static final Pattern RETURN_STATEMENT = Pattern.compile(Constants.RETURN_STATEMENT);
+    public static final Pattern END_OF_BLOCK = Pattern.compile(Constants.END_OF_BLOCK);
 
     public static final Pattern OPTIONAL_ASSIGNMENT_INT = Pattern.compile(Assignment.OPTIONAL_INT);
     public static final Pattern OPTIONAL_ASSIGNMENT_STRING = Pattern.compile(Assignment.OPTIONAL_STRING);
@@ -36,7 +36,7 @@ public class Regex {
     public static final Pattern DECLARATION_BOOLEAN = Pattern.compile(Declarations.BOOLEAN);
     public static final Pattern DECLARATION_CHAR = Pattern.compile(Declarations.CHAR);
 
-    public static final Pattern NAME_OF_VARIABLE = Pattern.compile(Stam.NAME_OF_VARIABLE);
+    public static final Pattern NAME_OF_VARIABLE = Pattern.compile(Constants.NAME_OF_VARIABLE);
 
     public static final Pattern INT_LITERAL = Pattern.compile(Literals.INT);
     public static final Pattern DOUBLE_LITERAL = Pattern.compile(Literals.DOUBLE);
@@ -44,10 +44,10 @@ public class Regex {
     public static final Pattern BOOLEAN_LITERAL = Pattern.compile(Literals.BOOLEAN);
     public static final Pattern CHAR_LITERAL = Pattern.compile(Literals.CHAR);
 
-    public static final Pattern ARGUMENT_DECLARATION = Pattern.compile(Patterns.ARGUMENT_DECLARATION);
+    public static final Pattern ARGUMENT_DECLARATION = Pattern.compile(Declarations.ARGUMENT);
     public static final Pattern METHOD_DECLARATION = Pattern.compile(Declarations.METHOD);
-    public static final Pattern ARGUMENT_VALUE = Pattern.compile(Patterns.ARGUMENT_VALUE);
-    public static final Pattern METHOD_INVOCATION = Pattern.compile(Patterns.METHOD_INVOCATION);
-    public static final Pattern CONDITION_BLOCK = Pattern.compile(Condition.CONDITION_BLOCK);
-    public static final Pattern CONDITION_EXPRESSION = Pattern.compile(Condition.CONDITION_EXPRESSION);
+    public static final Pattern ARGUMENT_VALUE = Pattern.compile(Method.ARGUMENT_VALUE);
+    public static final Pattern METHOD_INVOCATION = Pattern.compile(Method.CALL);
+    public static final Pattern CONDITION_BLOCK = Pattern.compile(Condition.BLOCK);
+    public static final Pattern CONDITION_EXPRESSION = Pattern.compile(Condition.EXPRESSION);
 }

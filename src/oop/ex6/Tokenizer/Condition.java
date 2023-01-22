@@ -1,18 +1,17 @@
 package oop.ex6.Tokenizer;
 
 public class Condition {
-    public static final String CONDITION_EXPRESSION = getConditionExpression();
-    public static final String CONDITION_BLOCK = getConditionBlock();
+    public static final String EXPRESSION = getExpression();
+    public static final String BLOCK = getBlock();
 
-    private static String getConditionBlock() {
+    private static String getBlock() {
         String orAnd = "(\\|\\||\\&\\&)";
-        String conditionExpression = Stam.ANY_WHITESPACES + CONDITION_EXPRESSION + Stam.ANY_WHITESPACES;
+        String conditionExpression = Constants.ANY_WHITESPACES + EXPRESSION + Constants.ANY_WHITESPACES;
         return Helper.getList("(while|if)", conditionExpression, orAnd, "+", "\\{");
     }
 
-    private static String getConditionExpression() {
+    private static String getExpression() {
         String literalString = "(" + Literals.INT + "|" + Literals.DOUBLE + "|" + Literals.BOOLEAN + ")";
-
-        return "(" + literalString + "|" + Stam.NAME_OF_VARIABLE + ")";
+        return "(" + literalString + "|" + Constants.NAME_OF_VARIABLE + ")";
     }
 }
