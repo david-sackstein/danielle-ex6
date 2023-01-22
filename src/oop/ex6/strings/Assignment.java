@@ -1,5 +1,7 @@
 package oop.ex6.strings;
 
+import static oop.ex6.strings.Primitives.*;
+
 public class Assignment {
     public static final String INT_RIGHT_SIDE = getRightSide(Literals.INT);
     public static final String STRING_RIGHT_SIDE = getRightSide(Literals.STRING);
@@ -19,21 +21,21 @@ public class Assignment {
     public static final String BOOLEAN = getSingle(BOOLEAN_RIGHT_SIDE);
     public static final String CHAR = getSingle(CHAR_RIGHT_SIDE);
 
-    public static final String INT_LINE = Primitives.START_LINE + "(" + INT + ");";
-    public static final String STRING_LINE = Primitives.START_LINE + "(" + STRING + ");";
-    public static final String DOUBLE_LINE = Primitives.START_LINE + "(" + DOUBLE + ");";
-    public static final String BOOLEAN_LINE = Primitives.START_LINE + "(" + BOOLEAN + ");";
-    public static final String CHAR_LINE = Primitives.START_LINE + "(" + CHAR + ");";
+    public static final String INT_LINE = START_LINE + "(" + INT + ");";
+    public static final String STRING_LINE = START_LINE + "(" + STRING + ");";
+    public static final String DOUBLE_LINE = START_LINE + "(" + DOUBLE + ");";
+    public static final String BOOLEAN_LINE = START_LINE + "(" + BOOLEAN + ");";
+    public static final String CHAR_LINE = START_LINE + "(" + CHAR + ");";
 
     private static String getSingleOptional(String rightSide) {
-        return Primitives.NAME_OF_VARIABLE + rightSide + "?" + Primitives.ANY_WHITESPACES;
+        return NAME_OF_VARIABLE + rightSide + "?" + WHITESPACES;
     }
 
     private static String getSingle(String rightSide) {
-        return Primitives.NAME_OF_VARIABLE + rightSide + Primitives.ANY_WHITESPACES;
+        return NAME_OF_VARIABLE + rightSide + WHITESPACES;
     }
 
     private static String getRightSide(String literalString) {
-        return "(" + Primitives.ANY_WHITESPACES + "=" + Primitives.ANY_WHITESPACES + "(" + literalString + "|" + Primitives.NAME_OF_VARIABLE + "))";
+        return "(" + WHITESPACES + "=" + WHITESPACES + "(" + literalString + "|" + NAME_OF_VARIABLE + "))";
     }
 }
