@@ -1,6 +1,6 @@
 package oop.ex6.syntax;
 
-import oop.ex6.ast.*;
+import oop.ex6.scope.*;
 import oop.ex6.main.LinesReader;
 
 import java.util.ArrayList;

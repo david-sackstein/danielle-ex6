@@ -1,4 +1,4 @@
-package oop.ex6.ast;
+package oop.ex6.scope;
 
 import java.util.ArrayList;
 

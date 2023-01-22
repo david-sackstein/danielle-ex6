@@ -2,20 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea8df31-8c54-4d9a-a1f6-4e390e6c575b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/AbstractSyntaxTree/BlockScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/ast/BlockScope.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/AbstractSyntaxTree/ConditionalScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/ast/ConditionalScope.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/AbstractSyntaxTree/GlobalScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/ast/GlobalScope.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/AbstractSyntaxTree/MethodDeclaration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/ast/MethodDeclaration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/AbstractSyntaxTree/MethodInvocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/ast/MethodInvocation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/AbstractSyntaxTree/MethodScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/ast/MethodScope.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/AbstractSyntaxTree/Scope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/ast/Scope.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/AbstractSyntaxTree/TypedValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/ast/TypedValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/AbstractSyntaxTree/Variable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/ast/Variable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/SyntaxAnalysis/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/syntax/Compiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/SyntaxAnalysis/SyntaxAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/SyntaxAnalysis/SyntaxException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/tokenizer/Tokenizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/ast/BlockScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/BlockScope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/ast/ConditionalScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/ConditionalScope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/ast/GlobalScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/GlobalScope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/ast/MethodDeclaration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/MethodDeclaration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/ast/MethodInvocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/MethodInvocation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/ast/MethodScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/MethodScope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/ast/Scope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/Scope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/ast/TypedValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/TypedValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/ast/Variable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/Variable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/syntax/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/syntax/Compiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxAnalyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/tokenizer/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/tokenizer/Tokenizer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -531,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674427553000</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Step 17">
+      <created>1674427933805</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1674427933805</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -608,7 +613,8 @@
     <MESSAGE value="Step 14" />
     <MESSAGE value="Step 15" />
     <MESSAGE value="Step 16" />
-    <option name="LAST_COMMIT_MESSAGE" value="Step 16" />
+    <MESSAGE value="Step 17" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 17" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

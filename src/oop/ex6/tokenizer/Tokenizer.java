@@ -1,6 +1,6 @@
 package oop.ex6.tokenizer;
 
-import oop.ex6.ast.*;
+import oop.ex6.scope.*;
 import oop.ex6.regex.*;
 
 import java.util.ArrayList;

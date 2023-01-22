@@ -1,4 +1,4 @@
-package oop.ex6.ast;
+package oop.ex6.scope;
 
 /**
  *  Represents a literal (Char, Double, Int, String, Boolean) or a Variable
