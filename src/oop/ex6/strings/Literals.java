@@ -9,4 +9,11 @@ public class Literals {
     public static final String CHAR = "'.'";
     public static final String STRING = "\".*\"";
     public static final String BOOLEAN = "true|false|" + DOUBLE + "|" + INT;
+    public static final String ANY = "(" +
+        "(" + Literals.INT + ")|" +
+        "(" + Literals.STRING + ")|" +
+        "(" + Literals.DOUBLE + ")|" +
+        "(" + Literals.BOOLEAN + ")|" +
+        "(" + Literals.CHAR + "))";
+
 }
