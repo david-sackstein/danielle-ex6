@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9ea8df31-8c54-4d9a-a1f6-4e390e6c575b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/strings/Literals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/strings/Literals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/strings/Declarations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/strings/Declarations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/strings/Primitives.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/strings/Primitives.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,11 +242,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="oop.ex6.strings.Primitives" />
       <recent name="oop.ex6.regex.Block" />
       <recent name="oop.ex6.regex.Literal" />
       <recent name="oop.ex6.regex.Declare" />
       <recent name="oop.ex6.regex.Assign" />
-      <recent name="oop.ex6.Tokenizer.Declarations" />
     </key>
     <key name="IntroduceConstantDialog.RECENTS_KEY">
       <recent name="oop.ex6.SyntaxAnalysis.LexicalAnalyzer" />
@@ -484,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674424740052</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Step 13">
+      <created>1674425152891</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1674425152891</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -557,7 +565,8 @@
     <MESSAGE value="Step 10" />
     <MESSAGE value="Step 11" />
     <MESSAGE value="Step 12" />
-    <option name="LAST_COMMIT_MESSAGE" value="Step 12" />
+    <MESSAGE value="Step 13" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 13" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -566,6 +575,11 @@
           <url>file://$PROJECT_DIR$/src/oop/ex6/SyntaxAnalysis/TextParser.java</url>
           <line>48</line>
           <option name="timeStamp" value="162" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/oop/ex6/strings/Assignment.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="163" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

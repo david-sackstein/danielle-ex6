@@ -16,4 +16,5 @@ public class Primitives {
 
     public static final String OPTIONAL_FINAL = "(final)?" + WHITESPACES;
     public static final String OPTIONAL_FINAL_AT_START = START_LINE + OPTIONAL_FINAL;
+    public static final String ANY_TYPES = "(int|double|String|boolean|char)";
 }

@@ -8,9 +8,8 @@ public class Declarations {
     public static final String DOUBLE = getLine("double", Assignment.OPTIONAL_DOUBLE);
     public static final String BOOLEAN = getLine("boolean", Assignment.OPTIONAL_BOOLEAN);
     public static final String CHAR = getLine("char", Assignment.OPTIONAL_CHAR);
-    public static final String ANY_TYPES = "(int|double|String|boolean|char)";
-    public static final String ARGUMENT = OPTIONAL_FINAL + ANY_TYPES + WHITESPACES + NAME_OF_VARIABLE;;
 
+    public static final String ARGUMENT = OPTIONAL_FINAL + ANY_TYPES + WHITESPACES + NAME_OF_VARIABLE;;
     public static final String METHOD = getMethod();
 
     public static String getLine(String typeString, String partialDeclaration) {
