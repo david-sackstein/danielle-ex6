@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="633a3afa-ff37-44d3-8aaf-3a42cc184fa9" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Declarations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Assignment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Literals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Literals.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Patterns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Patterns.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Regex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Stam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Stam.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,6 +243,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="oop.ex6.Tokenizer.Declarations" />
       <recent name="equals" />
     </key>
     <key name="IntroduceConstantDialog.RECENTS_KEY">
@@ -349,7 +348,7 @@
       <updated>1497252772658</updated>
       <workItem from="1497252776659" duration="4277000" />
       <workItem from="1674261568192" duration="9469000" />
-      <workItem from="1674296426434" duration="2997000" />
+      <workItem from="1674296426434" duration="3219000" />
     </task>
     <task id="LOCAL-00001" summary="refactored LinesReader">
       <created>1674291570228</created>
@@ -414,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674419982261</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Step 3">
+      <created>1674420478417</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1674420478417</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -466,7 +472,8 @@
     <MESSAGE value="from danna" />
     <MESSAGE value="Step 1" />
     <MESSAGE value="Step 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Step 2" />
+    <MESSAGE value="Step 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
