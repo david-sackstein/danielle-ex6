@@ -4,6 +4,8 @@ public class Stam {
     public static final String ANY_WHITESPACES = "\\s*";
     public static final String START_LINE = "^" + ANY_WHITESPACES;
     public static final String END_LINE = ANY_WHITESPACES + "$";
+    public static final String END_OF_BLOCK = START_LINE + "}" + END_LINE;
+    public static final String RETURN_STATEMENT = START_LINE + "return" + ANY_WHITESPACES + ";" + END_LINE;
     public static final String FINAL = "(final)*" + ANY_WHITESPACES;
     public static final String FINAL_AT_START = START_LINE + FINAL;
 

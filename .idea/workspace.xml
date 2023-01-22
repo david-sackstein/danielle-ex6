@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="633a3afa-ff37-44d3-8aaf-3a42cc184fa9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Declarations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Helper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Declarations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Declarations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Patterns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Patterns.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Regex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Stam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/Tokenizer/Stam.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +72,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ellie" />
+        <entry key="$PROJECT_DIR$" value="1bc78210c4dc8f88b95996b513df04e0ad964f8f" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -243,6 +245,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="oop.ex6.Tokenizer.Stam" />
+      <recent name="oop.ex6.Tokenizer.Helper" />
+      <recent name="oop.ex6.Tokenizer.Condition" />
       <recent name="oop.ex6.Tokenizer.Declarations" />
       <recent name="equals" />
     </key>
@@ -348,7 +353,7 @@
       <updated>1497252772658</updated>
       <workItem from="1497252776659" duration="4277000" />
       <workItem from="1674261568192" duration="9469000" />
-      <workItem from="1674296426434" duration="3219000" />
+      <workItem from="1674296426434" duration="4250000" />
     </task>
     <task id="LOCAL-00001" summary="refactored LinesReader">
       <created>1674291570228</created>
@@ -420,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674420478417</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Step 4">
+      <created>1674420702955</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1674420702955</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -464,6 +476,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="refactored LinesReader" />
     <MESSAGE value="refactored main" />
@@ -473,7 +496,8 @@
     <MESSAGE value="Step 1" />
     <MESSAGE value="Step 2" />
     <MESSAGE value="Step 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Step 3" />
+    <MESSAGE value="Step 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

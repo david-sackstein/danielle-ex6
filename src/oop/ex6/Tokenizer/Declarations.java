@@ -20,6 +20,6 @@ public class Declarations {
     }
 
     private static String getMethod() {
-        return Patterns.getList("void" + Stam.ANY_WHITESPACES + Stam.NAME_OF_METHOD, Patterns.ARGUMENT_DECLARATION, ",", "?", "\\{");
+        return Helper.getList("void" + Stam.ANY_WHITESPACES + Stam.NAME_OF_METHOD, Patterns.ARGUMENT_DECLARATION, ",", "?", "\\{");
     }
 }

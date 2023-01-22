@@ -9,8 +9,8 @@ import java.util.regex.Pattern;
 public class Regex {
     public static final Pattern EMPTY_LINE = Pattern.compile(Stam.EMPTY_LINE);
     public static final Pattern COMMENT_LINE = Pattern.compile(Stam.COMMENT_LINE);
-    public static final Pattern RETURN_STATEMENT = Pattern.compile(Patterns.RETURN_STATEMENT);
-    public static final Pattern END_OF_BLOCK = Pattern.compile(Patterns.END_OF_BLOCK);
+    public static final Pattern RETURN_STATEMENT = Pattern.compile(Stam.RETURN_STATEMENT);
+    public static final Pattern END_OF_BLOCK = Pattern.compile(Stam.END_OF_BLOCK);
 
     public static final Pattern OPTIONAL_ASSIGNMENT_INT = Pattern.compile(Assignment.OPTIONAL_INT);
     public static final Pattern OPTIONAL_ASSIGNMENT_STRING = Pattern.compile(Assignment.OPTIONAL_STRING);
