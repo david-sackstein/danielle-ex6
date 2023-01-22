@@ -50,47 +50,47 @@ public class Tokenizer {
     }
 
     public ArrayList<ArrayList<String>> splitDeclarationInt(String line) {
-        return splitDeclaration(line, RegexDeclarations.DECLARATION_INT, RegexAssignments.OPTIONAL_ASSIGNMENT_INT);
+        return splitDeclaration(line, RegexDeclarations.INT, RegexAssignment.OPTIONAL_INT);
     }
 
     public ArrayList<ArrayList<String>> splitDeclarationString(String line) {
-        return splitDeclaration(line, RegexDeclarations.DECLARATION_STRING, RegexAssignments.OPTIONAL_ASSIGNMENT_STRING);
+        return splitDeclaration(line, RegexDeclarations.STRING, RegexAssignment.OPTIONAL_STRING);
     }
 
     public ArrayList<ArrayList<String>> splitDeclarationBoolean(String line) {
-        return splitDeclaration(line, RegexDeclarations.DECLARATION_BOOLEAN, RegexAssignments.OPTIONAL_ASSIGNMENT_BOOLEAN);
+        return splitDeclaration(line, RegexDeclarations.BOOLEAN, RegexAssignment.OPTIONAL_BOOLEAN);
     }
 
     public ArrayList<ArrayList<String>> splitDeclarationChar(String line) {
-        return splitDeclaration(line, RegexDeclarations.DECLARATION_CHAR, RegexAssignments.OPTIONAL_ASSIGNMENT_CHAR);
+        return splitDeclaration(line, RegexDeclarations.CHAR, RegexAssignment.OPTIONAL_CHAR);
     }
 
     public ArrayList<ArrayList<String>> splitDeclarationDouble(String line) {
-        return splitDeclaration(line, RegexDeclarations.DECLARATION_DOUBLE, RegexAssignments.OPTIONAL_ASSIGNMENT_DOUBLE);
+        return splitDeclaration(line, RegexDeclarations.DOUBLE, RegexAssignment.OPTIONAL_DOUBLE);
     }
 
     public ArrayList<ArrayList<String>> splitAssignmentInt(String line) {
-        return splitAssignmentLine(line, RegexAssignments.ASSIGNMENT_INT_LINE, RegexAssignments.ASSIGNMENT_INT);
+        return splitAssignmentLine(line, RegexAssignment.INT_LINE, RegexAssignment.INT);
     }
 
     public ArrayList<ArrayList<String>> splitAssignmentString(String line) {
-        return splitAssignmentLine(line, RegexAssignments.ASSIGNMENT_STRING_LINE, RegexAssignments.ASSIGNMENT_STRING);
+        return splitAssignmentLine(line, RegexAssignment.STRING_LINE, RegexAssignment.STRING);
     }
 
     public ArrayList<ArrayList<String>> splitAssignmentBoolean(String line) {
-        return splitAssignmentLine(line, RegexAssignments.ASSIGNMENT_BOOLEAN_LINE, RegexAssignments.ASSIGNMENT_BOOLEAN);
+        return splitAssignmentLine(line, RegexAssignment.BOOLEAN_LINE, RegexAssignment.BOOLEAN);
     }
 
     public ArrayList<ArrayList<String>> splitAssignmentChar(String line) {
-        return splitAssignmentLine(line, RegexAssignments.ASSIGNMENT_CHAR_LINE, RegexAssignments.ASSIGNMENT_CHAR);
+        return splitAssignmentLine(line, RegexAssignment.CHAR_LINE, RegexAssignment.CHAR);
     }
 
     public ArrayList<ArrayList<String>> splitAssignmentDouble(String line) {
-        return splitAssignmentLine(line, RegexAssignments.ASSIGNMENT_DOUBLE_LINE, RegexAssignments.ASSIGNMENT_DOUBLE);
+        return splitAssignmentLine(line, RegexAssignment.DOUBLE_LINE, RegexAssignment.DOUBLE);
     }
 
     public ArrayList<ArrayList<String>> splitMethodDeclaration(String line) {
-        return splitMethod(line, RegexDeclarations.METHOD_DECLARATION, RegexDeclarations.ARGUMENT_DECLARATION);
+        return splitMethod(line, RegexDeclarations.METHOD, RegexDeclarations.ARGUMENT);
     }
 
     public ArrayList<ArrayList<String>> splitMethodInvocation(String line) {
@@ -206,22 +206,22 @@ public class Tokenizer {
     }
 
     private boolean isInt(String token) {
-        return RegexLiterals.INT_LITERAL.matcher(token).matches();
+        return RegexLiterals.INT.matcher(token).matches();
     }
 
     private boolean isBoolean(String token) {
-        return RegexLiterals.BOOLEAN_LITERAL.matcher(token).matches();
+        return RegexLiterals.BOOLEAN.matcher(token).matches();
     }
 
     private boolean isDouble(String token) {
-        return RegexLiterals.DOUBLE_LITERAL.matcher(token).matches();
+        return RegexLiterals.DOUBLE.matcher(token).matches();
     }
 
     private boolean isString(String token) {
-        return RegexLiterals.STRING_LITERAL.matcher(token).matches();
+        return RegexLiterals.STRING.matcher(token).matches();
     }
 
     private boolean isChar(String token) {
-        return RegexLiterals.CHAR_LITERAL.matcher(token).matches();
+        return RegexLiterals.CHAR.matcher(token).matches();
     }
 }
