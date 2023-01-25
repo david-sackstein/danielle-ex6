@@ -70,7 +70,7 @@ public abstract class Scope {
      * @return
      * @throws Exception
      */
-    public abstract Scope yourScopeEnded() throws Exception;
+    public abstract Scope endOfScope() throws Exception;
 
     /**
      * Utility function that returns a Variable from a specified ArrayList<Variable> that matches a specified name

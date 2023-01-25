@@ -18,7 +18,7 @@ public class MethodScope extends BlockScope {
      * @throws Exception
      */
     @Override
-    public Scope yourScopeEnded() throws Exception {
+    public Scope endOfScope() throws Exception {
         if (!hasReturned) {
             throw new Exception("Missing return statement");
         }

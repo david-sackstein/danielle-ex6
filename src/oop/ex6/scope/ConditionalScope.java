@@ -26,7 +26,7 @@ public class ConditionalScope extends BlockScope {
      * @throws Exception
      */
     @Override
-    public Scope yourScopeEnded() throws Exception {
+    public Scope endOfScope() throws Exception {
 
         removeLocalAssignments();
         return parent;

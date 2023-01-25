@@ -45,7 +45,7 @@ public class SyntaxParser {
             return scope;
         }
 
-        Scope method = createMethod(line, scope);
+        Scope method = createMethodScope(line, scope);
         if (method != null) {
             return method;
         }
@@ -60,10 +60,10 @@ public class SyntaxParser {
         }
 
         if (tokenizer.isEndOfBlock(line)) {
-            return scope.yourScopeEnded();
+            return scope.endOfScope();
         }
 
-        Scope conditionalBlock = createConditionalBlock(line, scope);
+        Scope conditionalBlock = createConditionalScope(line, scope);
         if (conditionalBlock != null) {
             return conditionalBlock;
         }
@@ -79,7 +79,7 @@ public class SyntaxParser {
      * @return
      * @throws Exception
      */
-    private MethodScope createMethod(String line, Scope scope) throws Exception {
+    private MethodScope createMethodScope(String line, Scope scope) throws Exception {
         ArrayList<ArrayList<String>> arrayLists = tokenizer.splitMethodDeclaration(line);
         if (arrayLists == null) {
             return null;
@@ -115,7 +115,7 @@ public class SyntaxParser {
      * @return
      * @throws Exception
      */
-    private ConditionalScope createConditionalBlock(String line, Scope scope) throws Exception {
+    private ConditionalScope createConditionalScope(String line, Scope scope) throws Exception {
         ArrayList<ArrayList<String>> arrayLists = tokenizer.splitBlockCondition(line);
         if (arrayLists == null) {
             return null;

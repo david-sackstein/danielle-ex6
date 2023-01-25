@@ -119,7 +119,7 @@ public class GlobalScope extends Scope {
      * @throws Exception
      */
     @Override
-    public Scope yourScopeEnded() throws Exception {
+    public Scope endOfScope() throws Exception {
         throw new Exception("End of scope is not allowed in global scope");
     }
 
