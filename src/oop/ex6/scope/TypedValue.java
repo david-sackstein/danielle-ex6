@@ -11,8 +11,6 @@ public class TypedValue {
         Int,
         String,
         Boolean,
-        // Used as a wildcard when matching variables or to represent the type of a variable that appears
-        // in a method invocation, when the method declaration has not been resolved
         Any
     }
 
@@ -20,10 +18,6 @@ public class TypedValue {
         this.type = type;
     }
     public Type type;
-
-    public String toString(){
-        return String.format("type = %s", type);
-    }
 
     /**
      * isAssignable returns true if and only if an TypedValue with the rhs type can be assigned to a
@@ -36,18 +30,19 @@ public class TypedValue {
         if (lhs == rhs) {
             return true;
         }
-        if (lhs == TypedValue.Type.Any || rhs == TypedValue.Type.Any) {
+        if (lhs == Type.Int && rhs == Type.Char) {
+            return true;
+        }
+        if (lhs == Type.Any || rhs == Type.Any) {
             return true;
         }
         if (lhs == TypedValue.Type.Boolean) {
-            if (rhs == TypedValue.Type.Double || rhs == TypedValue.Type.Boolean || rhs == TypedValue.Type.Int) {
+            if (rhs == Type.Double || rhs == Type.Int) {
                 return true;
             }
         }
         if (lhs == TypedValue.Type.Double) {
-            if (rhs == TypedValue.Type.Double || rhs == TypedValue.Type.Int) {
-                return true;
-            }
+            return rhs == Type.Int || rhs == Type.Char;
         }
         return false;
     }

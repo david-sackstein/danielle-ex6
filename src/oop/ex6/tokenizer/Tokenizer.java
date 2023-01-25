@@ -26,8 +26,8 @@ public class Tokenizer {
         return RegexPrimitives.END_OF_BLOCK.matcher(line).matches();
     }
 
-    public boolean isNameOfVariable(String token) {
-        return RegexPrimitives.NAME_OF_VARIABLE.matcher(token).matches();
+    public boolean isNotNameOfVariable(String token) {
+        return ! RegexPrimitives.NAME_OF_VARIABLE.matcher(token).matches();
     }
 
     public boolean isTypeMatch(TypedValue.Type expectedType, String rightSide) {
@@ -170,7 +170,7 @@ public class Tokenizer {
             return null;
         }
 
-        return splitOptionalAssignments(line, assignmentPattern);
+        return getMatchesGroups(line, assignmentPattern);
     }
 
     private ArrayList<ArrayList<String>> splitAssignmentLine(String line, Pattern lineMatcher, Pattern assignmentPattern) {
@@ -179,10 +179,10 @@ public class Tokenizer {
             return null;
         }
 
-        return splitOptionalAssignments(line, assignmentPattern);
+        return getMatchesGroups(line, assignmentPattern);
     }
 
-    private ArrayList<ArrayList<String>> splitOptionalAssignments(String line, Pattern assignmentPattern) {
+    private ArrayList<ArrayList<String>> getMatchesGroups(String line, Pattern assignmentPattern) {
         ArrayList<ArrayList<String>> listOfLists = new ArrayList<ArrayList<String>>();
 
         Matcher partialMatcher = assignmentPattern.matcher(line);

@@ -144,7 +144,7 @@ public class SyntaxAnalyzer {
                 continue;
             }
 
-            if (!tokenizer.isNameOfVariable(conditionExpression)) {
+            if (tokenizer.isNotNameOfVariable(conditionExpression)) {
                 throw new Exception("The regex failed");
             }
 
@@ -409,7 +409,7 @@ public class SyntaxAnalyzer {
             return new TypedValue(expectedType);
         }
 
-        if (!tokenizer.isNameOfVariable(rightSide)) {
+        if (tokenizer.isNotNameOfVariable(rightSide)) {
             throw new Exception("Invalid type or variable methodName");
         }
 
