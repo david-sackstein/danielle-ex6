@@ -12,7 +12,7 @@ import java.util.Objects;
  */
 public class SyntaxParser {
 
-    private Tokenizer tokenizer;
+    private final Tokenizer tokenizer;
 
     public SyntaxParser() {
         tokenizer = new Tokenizer();
@@ -22,6 +22,7 @@ public class SyntaxParser {
      * Accepts a line of text and interprets it within the context of the current scope or throws an exception if
      * the line was invalid, either at the textual level or at the level of the language syntax.
      * parse checks the possibility that the line may match any of all allowed syntactical structures.
+     *
      * @param line
      * @param scope
      * @return returns the scope that is active after the line is read. For instance, if the line is method invocation
@@ -49,7 +50,7 @@ public class SyntaxParser {
             return method;
         }
 
-        if (doMethodInvocation(line, scope)){
+        if (doMethodInvocation(line, scope)) {
             return scope;
         }
 
@@ -62,8 +63,8 @@ public class SyntaxParser {
             return scope.yourScopeEnded();
         }
 
-        Scope conditionalBlock = createConditionalBlock (line, scope);
-        if (conditionalBlock != null){
+        Scope conditionalBlock = createConditionalBlock(line, scope);
+        if (conditionalBlock != null) {
             return conditionalBlock;
         }
 
@@ -139,8 +140,8 @@ public class SyntaxParser {
             String conditionExpression = arrayLists.get(i).get(1);
 
             if (tokenizer.isTypeMatch(TypedValue.Type.Boolean, conditionExpression) ||
-                    tokenizer.isTypeMatch(TypedValue.Type.Int, conditionExpression) ||
-                    tokenizer.isTypeMatch(TypedValue.Type.Double, conditionExpression)) {
+                tokenizer.isTypeMatch(TypedValue.Type.Int, conditionExpression) ||
+                tokenizer.isTypeMatch(TypedValue.Type.Double, conditionExpression)) {
                 continue;
             }
 
@@ -149,9 +150,9 @@ public class SyntaxParser {
             }
 
             Variable variable = getVariableInitializer(
-                    scope,
-                    conditionExpression,
-                    TypedValue.Type.Boolean, TypedValue.Type.Int, TypedValue.Type.Double);
+                scope,
+                conditionExpression,
+                TypedValue.Type.Boolean, TypedValue.Type.Int, TypedValue.Type.Double);
         }
 
         return conditionalScope;
@@ -188,23 +189,23 @@ public class SyntaxParser {
      * @throws Exception
      */
     private TypedValue createTypedValueArgument(Scope scope, String argumentToken) throws Exception {
-        if (tokenizer.isTypeMatch(TypedValue.Type.Int, argumentToken)){
+        if (tokenizer.isTypeMatch(TypedValue.Type.Int, argumentToken)) {
             return new TypedValue(TypedValue.Type.Int);
         }
-        if (tokenizer.isTypeMatch(TypedValue.Type.Double, argumentToken)){
+        if (tokenizer.isTypeMatch(TypedValue.Type.Double, argumentToken)) {
             return new TypedValue(TypedValue.Type.Double);
         }
-        if (tokenizer.isTypeMatch(TypedValue.Type.String, argumentToken)){
+        if (tokenizer.isTypeMatch(TypedValue.Type.String, argumentToken)) {
             return new TypedValue(TypedValue.Type.String);
         }
-        if (tokenizer.isTypeMatch(TypedValue.Type.Char, argumentToken)){
+        if (tokenizer.isTypeMatch(TypedValue.Type.Char, argumentToken)) {
             return new TypedValue(TypedValue.Type.Char);
         }
-        if (tokenizer.isTypeMatch(TypedValue.Type.Boolean, argumentToken)){
+        if (tokenizer.isTypeMatch(TypedValue.Type.Boolean, argumentToken)) {
             return new TypedValue(TypedValue.Type.Boolean);
         }
         Variable variable = scope.findVariable(argumentToken, TypedValue.Type.Any);
-        if (! variable.isInitialized()) {
+        if (!variable.isInitialized()) {
             throw new Exception("Uninitialized arguments passed to method");
         }
         return variable;
@@ -381,7 +382,7 @@ public class SyntaxParser {
             variable.isFinal = isFinal;
 
             variable.addInitializer(
-                    getInitializer(scope, partialDeclarationGroup, type));
+                getInitializer(scope, partialDeclarationGroup, type));
 
             if (isFinal && !variable.isInitialized()) {
                 throw new SyntaxException("Final declarations must be initialized");
@@ -426,7 +427,7 @@ public class SyntaxParser {
      * @throws Exception
      */
     private Variable getVariableInitializer(Scope scope, String variableName, TypedValue.Type... typeArray) throws Exception {
-        for(TypedValue.Type type : typeArray) {
+        for (TypedValue.Type type : typeArray) {
             Variable variable = scope.findVariable(variableName, type);
             if (variable == null) {
                 continue;
