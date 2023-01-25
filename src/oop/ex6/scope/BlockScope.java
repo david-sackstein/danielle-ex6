@@ -116,7 +116,7 @@ public abstract class BlockScope extends Scope {
     }
 
     @Override
-    public void youAreReturning() {
+    public void returnFromScope() {
         hasReturned = true;
     }
 

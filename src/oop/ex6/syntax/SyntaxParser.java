@@ -55,7 +55,7 @@ public class SyntaxParser {
         }
 
         if (tokenizer.isReturnStatement(line)) {
-            scope.youAreReturning();
+            scope.returnFromScope();
             return scope;
         }
 

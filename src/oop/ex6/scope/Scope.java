@@ -63,7 +63,7 @@ public abstract class Scope {
      * Adds a return statement to the scope or throws an exception if not supported
      * @throws Exception
      */
-    public abstract void youAreReturning() throws Exception;
+    public abstract void returnFromScope() throws Exception;
 
     /**
      * Ends the current scope and returns the parent scope or throws an exception if not valid

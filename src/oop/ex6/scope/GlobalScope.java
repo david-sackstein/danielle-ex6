@@ -110,7 +110,7 @@ public class GlobalScope extends Scope {
      * @throws Exception
      */
     @Override
-    public void youAreReturning() throws Exception {
+    public void returnFromScope() throws Exception {
         throw new Exception("Return statement is not allowed in global scope");
     }
 
