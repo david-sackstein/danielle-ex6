@@ -19,7 +19,7 @@ public class Compiler {
     public void compile(String fileName) throws Exception {
         ArrayList<String> lines  = new LinesReader().getLines(fileName);
 
-        SyntaxAnalyzer parser = new SyntaxAnalyzer();
+        SyntaxParser parser = new SyntaxParser();
 
         GlobalScope globalScope = new GlobalScope();
         Scope scope = globalScope;

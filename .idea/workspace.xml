@@ -1,24 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ea8df31-8c54-4d9a-a1f6-4e390e6c575b" name="Changes" comment="Step 18">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ex6/oop/ex6/AbstractSyntaxTree/BlockScope.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ex6/oop/ex6/AbstractSyntaxTree/ConditionalScope$BlockType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ex6/oop/ex6/AbstractSyntaxTree/ConditionalScope.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ex6/oop/ex6/AbstractSyntaxTree/GlobalScope.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ex6/oop/ex6/AbstractSyntaxTree/MethodDeclaration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ex6/oop/ex6/AbstractSyntaxTree/MethodInvocation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ex6/oop/ex6/AbstractSyntaxTree/MethodScope.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ex6/oop/ex6/AbstractSyntaxTree/Scope.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ex6/oop/ex6/AbstractSyntaxTree/TypedValue$Type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ex6/oop/ex6/AbstractSyntaxTree/TypedValue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ex6/oop/ex6/AbstractSyntaxTree/Variable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ex6/oop/ex6/SyntaxAnalysis/Compiler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ex6/oop/ex6/SyntaxAnalysis/SyntaxException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/scope/TypedValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/TypedValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/tokenizer/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/tokenizer/Tokenizer.java" afterDir="false" />
+    <list default="true" id="9ea8df31-8c54-4d9a-a1f6-4e390e6c575b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/syntax/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/syntax/Compiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -548,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674428271269</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Step 19">
+      <created>1674687886684</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1674687886684</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -627,7 +619,8 @@
     <MESSAGE value="Step 16" />
     <MESSAGE value="Step 17" />
     <MESSAGE value="Step 18" />
-    <option name="LAST_COMMIT_MESSAGE" value="Step 18" />
+    <MESSAGE value="Step 19" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 19" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

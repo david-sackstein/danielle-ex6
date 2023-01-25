@@ -10,11 +10,11 @@ import java.util.Objects;
  * SyntaxAnalyzer uses a LexicalAnalyzer to break javaS text into tokens and
  * creates language elements from those tokens.
  */
-public class SyntaxAnalyzer {
+public class SyntaxParser {
 
     private Tokenizer tokenizer;
 
-    public SyntaxAnalyzer() {
+    public SyntaxParser() {
         tokenizer = new Tokenizer();
     }
 
