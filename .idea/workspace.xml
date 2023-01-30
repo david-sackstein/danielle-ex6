@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ea8df31-8c54-4d9a-a1f6-4e390e6c575b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/scope/BlockScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/BlockScope.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/scope/GlobalScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/GlobalScope.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/scope/Scope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/Scope.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxParser.java" afterDir="false" />
+    <list default="true" id="9ea8df31-8c54-4d9a-a1f6-4e390e6c575b" name="Changes" comment="Step 23">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -315,13 +312,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="ex6" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -563,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674689098015</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Step 23">
+      <created>1674689216354</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1674689216354</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -619,7 +616,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactored Patterns" />
     <MESSAGE value="Updated from" />
     <MESSAGE value="from danna" />
     <MESSAGE value="Step 1" />
@@ -644,7 +640,8 @@
     <MESSAGE value="Step 20" />
     <MESSAGE value="Step 21" />
     <MESSAGE value="Step 22" />
-    <option name="LAST_COMMIT_MESSAGE" value="Step 22" />
+    <MESSAGE value="Step 23" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 23" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
