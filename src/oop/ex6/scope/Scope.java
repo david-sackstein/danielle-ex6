@@ -1,93 +1,117 @@
 package oop.ex6.scope;
-
+import oop.ex6.scope.method.MethodCall;
+import oop.ex6.scope.method.Method;
+import oop.ex6.variableDeclaration.Type;
+import oop.ex6.variableDeclaration.Value;
+import oop.ex6.variableDeclaration.Variable;
+import java.util.function.BooleanSupplier;
 import java.util.ArrayList;
 
-/**
- * Scope represents a part of the code that can contain expressions and statements
- */
+
+
 public abstract class Scope {
-    Scope parent;
-    Scope(Scope parent) {
-        this.parent = parent;
-    }
+    protected Scope outerScope;
+
+    Scope(Scope outerScope) {this.outerScope = outerScope;}
+
+
 
     /**
-     * Adds a method body to the scope or throws an exception if not supported
-     * @param method
-     * @throws Exception
+     * deals with a variable in the scope.
+     * @param variable the variable in the scope
+     * @throws Exception throws an exception if the variable is declared illegally.
      */
-    public abstract void addMethod(MethodScope method) throws Exception;
+    public abstract void variableInScope(Variable variable) throws Exception;
+
+
 
     /**
-     * Adds a variable declaration to the scope or throws an exception if not supported
-     * @param variable
-     * @throws Exception
+     * deals with an assignment in the scope.
+     * @param variable variable to be assigned.
+     * @param value value of assignment.
+     * @throws Exception throws an exception if the assignment is illegal.
      */
-    public abstract void addVariable(Variable variable) throws Exception;
+    public abstract void assignmentInScope(Variable variable, Value value) throws Exception;
+
+
 
     /**
-     * Adds an assignment statement to the scope or throws an exception if not supported
-     * @param variable
-     * @param initializer
-     * @throws Exception
+     * deals with a method scope.
+     * @param method the method in the scope
+     * @throws Exception throws an exception if the scope is not suitable for a method.
      */
-    public abstract void addAssignment(Variable variable, TypedValue initializer) throws Exception;
+    public abstract void methodInScope(Method method) throws Exception;
+
+
 
     /**
-     * Adds a method invocation statement to the scope or throws an exception if not supported
-     * @param invocation
-     * @throws Exception
+     * searches in this scope and in the parent scopes for a method matching to the method call.
+     * @param methodCall the method call.
+     * @return a method that matches the method call.
+     * @throws Exception throws an exception if matching method was not found.
      */
-    public abstract void addInvocation(MethodInvocation invocation) throws Exception;
+    public abstract Method searchForMethod(MethodCall methodCall) throws Exception;
+
+
 
     /**
-     * Returns a Variable with specified name and type in this scope or in parent scopes
-     * or throws an exception if a match was not found
-     * @param name
-     * @param type may also take the value of TypedValue.Type.Any to match variables of any type
-     * @return
-     * @throws Exception
+     * deals with return statement in scope.
+     * @throws Exception throws an exception if return statement is not supported in the scope.
      */
-    public abstract Variable findVariable(String name, TypedValue.Type type) throws Exception;
+    public abstract void returnInScope() throws Exception;
+
 
     /**
-     * Returns a method that matches the specified invocation in the current scope or in parent scopes
-     * or throws an exception if a match was not found
-     * @param invocation
-     * @return
-     * @throws Exception
+     * deals with a method call in the scope.
+     * @param methodCall method call in the scope.
+     * @throws Exception throws an exception if the method call is illegal.
      */
-    public abstract MethodScope findMethod(MethodInvocation invocation) throws Exception;
+    public abstract void methodCallInScope(MethodCall methodCall) throws Exception;
+
+
 
     /**
-     * Adds a return statement to the scope or throws an exception if not supported
-     * @throws Exception
+     * searches for a variable with the given name and type in the scope.
+     * @param name name of searched variable
+     * @param type type of searched variable
+     * @return a variable with the given name and type in the scope.
+     * @throws Exception throws an exception if matching variable was not found.
      */
-    public abstract void returnFromScope() throws Exception;
+    public abstract Variable searchVariableInScope(String name, Type type) throws Exception;
+
+
 
     /**
-     * Ends the current scope and returns the parent scope or throws an exception if not valid
-     * @return
-     * @throws Exception
+     * Ends the current scope.
+     * @return the outer scope.
+     * @throws Exception throws an exception if ending of scope was not valid.
      */
-    public abstract Scope endOfScope() throws Exception;
+    public abstract Scope endScope() throws Exception;
+
+
 
     /**
-     * Utility function that returns a Variable from a specified ArrayList<Variable> that matches a specified name
-     * and type, or throws an exception if not found.
-     * @param name
-     * @param type
-     * @param variableList
-     * @return
-     * @throws Exception
+     * searches for a variable with the given name and type in the given array
+     * @param name name of the searched variable.
+     * @param type type of the searched variable.
+     * @param variableArray array to search in.
+     * @return a variable with the given name and type in the given array,
+     *         or null if was not found.
      */
-    protected Variable findVariable(String name, TypedValue.Type type, ArrayList<Variable> variableList) throws Exception {
-        for (Variable variable : variableList) {
-            boolean hasMatchingType = (variable.type == type) || (type == TypedValue.Type.Any);
-            if (variable.name.equals(name) && hasMatchingType) {
+    protected Variable searchVariableInScope(String name, Type type,
+                                             ArrayList<Variable> variableArray){
+        for (Variable variable : variableArray) {
+            boolean hasMatchingType = (variable.getType() == type) || (type == Type.Any);
+            if (variable.getName().equals(name) && hasMatchingType) {
                 return variable;
             }
         }
         return null;
+    }
+
+    public static void throwExceptionByCondition(BooleanSupplier func, String message) throws Exception{
+        if (func.getAsBoolean()){
+            throw new Exception(message);
+        }
     }
 }

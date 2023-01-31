@@ -1,0 +1,20 @@
+test001.sjavac 1 method definition has white space inside the name of the method (1).
+test002.sjavac 0 method definition with legal method name (0).
+test003.sjavac 1 assignment of a String value to a boolean variable (1).
+test004.sjavac 1 comment on the same line as } (1).
+test005.sjavac 1 method declaration with out a return statement in the end (1).
+test006.sjavac 0 assignment of a int value to a boolean variable (0).
+test007.sjavac 1 variable declaration with no ; in the end (1).
+test008.sjavac 1 variable declaration with illegal name (1).
+test009.sjavac 0 variable declaration with llegal name (0).
+test010.sjavac 0 comment with a space before the // (1). ????????????????
+test011.sjavac 0 legal comment (0).
+test012.sjavac 1 legal calling method with args (0). ????????????????
+test013.sjavac 1 method declaration with 2 arguments sharing the same name (1).
+test014.sjavac 1 variable declaration using 2 lines (1).
+test015.sjavac 1 2 global variables with the same name (1).
+test016.sjavac 0 multiply variable of the same type declared in the same line (0).
+test017.sjavac 1 two local variable with the same name defined inside different blocks, one is nested in the other (0). ????????????????
+test018.sjavac 1 final modifier after type (1).
+test019.sjavac 1 use of the static modifier in variable declaration (1).
+test020.sjavac 1 initialized with  value after declaration time (1).

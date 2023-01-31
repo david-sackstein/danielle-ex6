@@ -2,7 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea8df31-8c54-4d9a-a1f6-4e390e6c575b" name="Changes" comment="Step 23">
+      <change afterPath="$PROJECT_DIR$/src/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/exceptions/ExceptionMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/fileReader/FileToLines.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/scope/ifOrWhile/IfWhileScope.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/scope/method/MethodCall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test001.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test002.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test003.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test004.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test005.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test006.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test007.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test008.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test009.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test010.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test011.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test012.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test013.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test014.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test015.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test016.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test017.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test018.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test019.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test020.sjavac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/tests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/variableDeclaration/Type.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/variableDeclaration/Value.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop/ex6/variableDeclaration/Variable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/main/LinesReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/RegexBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/regex/RegexBlocks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/regex/RegexDeclarations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/regex/RegexDeclarations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/scope/BlockScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/NonGlobalScope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/scope/ConditionalScope.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/scope/GlobalScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/GlobalScope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/scope/MethodDeclaration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/method/MethodSignature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/scope/MethodInvocation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/scope/MethodScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/method/Method.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/scope/Scope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/Scope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/scope/TypedValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/scope/Variable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/strings/Method.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/strings/MethodString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/syntax/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/syntax/Compiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/tokenizer/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/tokenizer/Tokenizer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,9 +61,6 @@
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="ex6" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -227,17 +271,13 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="extract.method.default.visibility" value="private" />
-    <property name="last.edited.regexp" value="hnrklhnrkl//klk///asasdddddwewewey56757   ///65u" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="oop.ex6.strings.Method" />
@@ -297,10 +337,12 @@
       </method>
     </configuration>
     <configuration name="ex6" type="Application" factoryName="Application" singleton="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="oop.ex6.main.Sjavac" />
       <module name="ex6" />
-      <option name="PROGRAM_PARAMETERS" value="..\sjavac_tests.txt" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/ex6_files/tests" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/src/oop/ex6/testFiles/tests.txt" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/oop/ex6/testFiles" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -334,7 +376,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="633a3afa-ff37-44d3-8aaf-3a42cc184fa9" name="Default" comment="" />
+      <changelist id="9ea8df31-8c54-4d9a-a1f6-4e390e6c575b" name="Changes" comment="Step 23" />
       <created>1497252772658</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -342,6 +384,8 @@
       <workItem from="1497252776659" duration="4277000" />
       <workItem from="1674261568192" duration="9469000" />
       <workItem from="1674296426434" duration="4250000" />
+      <workItem from="1675067852354" duration="46018000" />
+      <workItem from="1675193341075" duration="2955000" />
     </task>
     <task id="LOCAL-00001" summary="refactored LinesReader">
       <created>1674291570228</created>

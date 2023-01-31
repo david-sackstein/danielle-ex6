@@ -1,6 +1,7 @@
 package oop.ex6.main;
 
 import oop.ex6.syntax.Compiler;
+import oop.ex6.fileReader.FileToLines;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,18 +9,14 @@ import java.util.Objects;
 
 public class Sjavac {
 
-    /**
-     * @param args
-     * @throws Exception
-     */
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
         try {
             String fileName = args[0];
 
-            LinesReader linesReader = new LinesReader();
-            ArrayList<String> lines = linesReader.getLines(fileName);
+            FileToLines linesReader = new FileToLines();
+            ArrayList<String> lines =  linesReader.createNonEmptyLineArray(fileName);
 
-            for (int i = 1; i < 205; i++) {
+            for (int i = 1; i < 20; i++) {
                 RunLineTest(lines.get(i - 1));
             }
             System.out.println("PASSED");
@@ -29,10 +26,7 @@ public class Sjavac {
         }
     }
 
-    /**
-     * @param line
-     * @throws Exception
-     */
+
     private static void RunLineTest(String line) throws Exception {
         String[] tokens = line.split(" ");
         if (tokens.length < 2) {
@@ -48,10 +42,7 @@ public class Sjavac {
         }
     }
 
-    /**
-     * @param testFileName
-     * @return
-     */
+
     private static String RunTest(String testFileName) {
         try {
             new Compiler().compile(testFileName);
