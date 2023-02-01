@@ -3,9 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="9ea8df31-8c54-4d9a-a1f6-4e390e6c575b" name="Changes" comment="start debug tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex6_files/tests/test457.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/ex6_files/tests/test457.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/README" beforeDir="false" afterPath="$PROJECT_DIR$/src/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/exceptions/ExceptionMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/exceptions/ExceptionMessages.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/scope/GlobalScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/GlobalScope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/scope/method/Method.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/method/Method.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/scope/method/MethodCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/method/MethodCall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/syntax/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/syntax/Compiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test004.sjavac" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test004.sjavac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test012.sjavac" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test012.sjavac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test017.sjavac" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test017.sjavac" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/tests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/tests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/tokenizer/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/tokenizer/Tokenizer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +82,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -341,7 +353,7 @@
       <workItem from="1674261568192" duration="9469000" />
       <workItem from="1674296426434" duration="4250000" />
       <workItem from="1675067852354" duration="46018000" />
-      <workItem from="1675193341075" duration="6551000" />
+      <workItem from="1675193341075" duration="19952000" />
     </task>
     <task id="LOCAL-00001" summary="refactored LinesReader">
       <created>1674291570228</created>
@@ -574,7 +586,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1675244101900</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL‎-00034" summary="start debug tests">
+      <created>1675245155690</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL‎-00034" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1675245155690</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -664,11 +683,6 @@
           <url>file://$PROJECT_DIR$/src/oop/ex6/syntax/TextParser.java</url>
           <line>48</line>
           <option name="timeStamp" value="162" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="163" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

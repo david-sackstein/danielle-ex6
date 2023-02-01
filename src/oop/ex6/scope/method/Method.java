@@ -25,6 +25,15 @@ public class Method extends NonGlobalScope {
         throwExceptionByCondition(()-> (!foundReturnStatement), NO_RETURN_ON_END_OF_SCOPE);
     }
 
+//    /**
+//     * when got to return statement.
+//     */
+//    @Override
+//    public void returnInScope() throws Exception{
+//        super.returnInScope();
+//        throwExceptionByCondition(()-> TRY.endScopeAfterRetrun(), END_AFTER_RETURN);
+//    }
+
 
 
     /**
@@ -52,7 +61,7 @@ public class Method extends NonGlobalScope {
     }
 
 
-    MethodSignature getMethodSignature(){
+    public MethodSignature getMethodSignature(){
         return methodSignature;
     }
 

@@ -3,6 +3,7 @@ import oop.ex6.scope.*;
 import oop.ex6.scope.ifOrWhile.IfWhileScope;
 import oop.ex6.scope.method.Method;
 import oop.ex6.scope.method.MethodCall;
+import oop.ex6.scope.method.MethodSignature;
 import oop.ex6.tokenizer.Tokenizer;
 import oop.ex6.variableDeclaration.Type;
 import oop.ex6.variableDeclaration.Value;
@@ -16,6 +17,47 @@ import static oop.ex6.exceptions.ExceptionMessages.*;
  */
 public class SyntaxParser {
 
+    private final ArrayList<MethodSignature> methodSignatures;
+    private final ArrayList<MethodCall> methodCalls;
+
+    public SyntaxParser() {
+        this.methodSignatures = new ArrayList<>();
+        this.methodCalls = new ArrayList<>();
+    }
+
+
+
+    /**
+     checks if all method calls in the list of methodCalls have corresponding declarations in
+     the list of methodSignatures.
+     @return a boolean indicating whether all method calls have declarations (true) or not (false)
+     */
+    private boolean allCallsHaveDeclerations(){
+        for (MethodCall call : methodCalls){
+            if (!callHasDeclaration(call)){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
+    /**
+     checks if a single method call has a corresponding declaration in the list of methodSignatures.
+     @param call the MethodCall to be checked
+     @return a boolean indicating whether the method call has a declaration (true) or not (false)
+     */
+    private boolean callHasDeclaration(MethodCall call){
+        for (MethodSignature methodSignature : methodSignatures){
+            if (call.isCallOf(methodSignature)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 
     /** finds the relevant scope after reading the given line.
      * @param line the given line.
@@ -23,7 +65,12 @@ public class SyntaxParser {
      * @return the relevant scope after the line is read.
      * @throws Exception if something was illegal.
      */
-    public Scope parseIntoScope(String line, Scope currentScope) throws Exception {
+    public Scope parseIntoScope(String line, String nextLine, Scope currentScope)
+            throws Exception {
+
+        if (nextLine == null){ //got to end of file
+            Scope.throwExceptionByCondition(()->!allCallsHaveDeclerations(), NO_METHOD_MATCHING_TO_CALL);
+        }
 
         if (Tokenizer.isCommentOrEmptyLine(line)) {
             return currentScope;
@@ -31,6 +78,7 @@ public class SyntaxParser {
 
         if (Tokenizer.isReturnStatement(line)) {
             currentScope.returnInScope();
+            Scope.throwExceptionByCondition(()->!Tokenizer.isEndOfBlock(nextLine), RETURN_WITH_NO_END);
             return currentScope;
         }
 
@@ -47,7 +95,8 @@ public class SyntaxParser {
         }
 
         if (isLineLegalMethodCall(line)) {
-            MethodCall.runMethodCall(line, currentScope);
+            MethodCall call = MethodCall.runMethodCall(line, currentScope);
+            methodCalls.add(call);
             return currentScope;
         }
 
@@ -56,8 +105,9 @@ public class SyntaxParser {
             return conditionalBlock;
         }
 
-        Scope method = Method.lineToMethodScope(line, currentScope);
+        Method method = Method.lineToMethodScope(line, currentScope);
         if (method != null) {
+            methodSignatures.add(method.getMethodSignature());
             return method;
         }
 
@@ -132,12 +182,18 @@ public class SyntaxParser {
                     varUnfound(name));
             Scope.throwExceptionByCondition(()->(variable.getType() != type),
                     assignmentOfWrongTypes(type, variable.getType()));
-            Scope.throwExceptionByCondition(()->variable.getFinalIndicator(),
+            Scope.throwExceptionByCondition(variable::getFinalIndicator,
                     FINAL_VARIABLE_ASSIGNMENT);
 
             scope.assignmentInScope(variable, Value.intialize(scope, part, type));
         }
     }
+
+//    private boolean allCallsHaveDeclerations(){
+//        for (MethodCall call : methodCalls){
+//
+//        }
+//    }
 
 
 
@@ -192,7 +248,7 @@ public class SyntaxParser {
     private void saveTypedVariablesToScope(
             Scope scope, ArrayList<ArrayList<String>> splited, Type type) throws Exception {
 
-        Scope.throwExceptionByCondition(()->splited.isEmpty(), EMPTY_ARRAY);
+        Scope.throwExceptionByCondition(splited::isEmpty, EMPTY_ARRAY);
 
         // has final statement
         boolean hasFinalStatement = splited.get(0).get(1).equals("final");

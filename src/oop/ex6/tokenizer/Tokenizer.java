@@ -21,6 +21,9 @@ public class Tokenizer {
     }
 
     public static boolean isEndOfBlock(String line) {
+        if (line == null){
+            return false;
+        }
         return RegexPrimitives.END_OF_BLOCK.matcher(line).matches();
     }
 

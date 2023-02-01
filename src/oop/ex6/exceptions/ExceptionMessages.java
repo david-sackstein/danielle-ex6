@@ -10,6 +10,8 @@ public class ExceptionMessages {
     public static final String REGEX_FAIL = "Regex failed.";
     public static final String ILLEGAL_TYPE_NAME =
             "Type or name is illegal.";
+    public static final String RETURN_WITH_NO_END =
+            "Return statement with no } in the next line is not allowed.";
     public static final String EMPTY_ARRAY =
             "The given array of string arrays is empty.";
     public static final String FINAL_VARIABLE_ASSIGNMENT =

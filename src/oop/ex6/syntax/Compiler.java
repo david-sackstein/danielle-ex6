@@ -19,12 +19,13 @@ public class Compiler {
         ArrayList<String> lines  = new FileToLines().createNonEmptyLineArray(fileName);
 
         SyntaxParser parser = new SyntaxParser();
-
         GlobalScope globalScope = new GlobalScope();
         Scope scope = globalScope;
 
-        for(String line : lines) {
-            scope = parser.parseIntoScope(line, scope);
+        for(int i=0; i< lines.size(); i++) {
+            String line = lines.get(i);
+            String nextLine = (i == lines.size() - 1)? null: lines.get(i + 1);
+            scope = parser.parseIntoScope(line, nextLine, scope);
         }
         globalScope.checkForUnresolvedNames();
     }

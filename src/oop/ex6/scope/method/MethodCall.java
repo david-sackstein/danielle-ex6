@@ -86,10 +86,12 @@ public class MethodCall {
      @param scope the scope in which the method call is made
      @throws Exception if the method call is invalid
      */
-    public static void runMethodCall(String line, Scope scope) throws Exception {
+    public static MethodCall runMethodCall(String line, Scope scope)
+            throws Exception {
         ArrayList<ArrayList<String>> splited = Tokenizer.splitMethodCall(line);
         MethodCall call = getMethodCall(scope, splited);
         scope.methodCallInScope(call);
+        return call;
     }
 
 
@@ -104,14 +106,27 @@ public class MethodCall {
     public static MethodCall getMethodCall(Scope scope, ArrayList<ArrayList<String>> arrayLists)
             throws Exception{
 
-        MethodCall invocation = new MethodCall(arrayLists.get(0).get(0));
+        MethodCall call = new MethodCall(arrayLists.get(0).get(0));
 
         for (int i = 1; i < arrayLists.size(); i++) {
 
             String argumentToken = arrayLists.get(i).get(1);
             Value typedValue = Value.createTypedValueArgument(scope, argumentToken);
-            invocation.addToCallArgumentsArray(typedValue);
+            call.addToCallArgumentsArray(typedValue);
         }
-        return invocation;
+        return call;
+    }
+
+    public boolean isCallOf(MethodSignature methodSignature) {
+        if (!callMethodName.equals(methodSignature.getMethodName())){return false;}
+        ArrayList<Variable> argsSignature = methodSignature.getArgumentsArray();
+        if (argsSignature.size() != callArguments.size()){return false;}
+
+        for (int i=0; i<callArguments.size(); i++){
+            if (!Value.assignable(callArguments.get(i).getType(), argsSignature.get(i).getType())){
+                return false;
+            }
+        }
+        return true;
     }
 }
