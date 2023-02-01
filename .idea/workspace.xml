@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ea8df31-8c54-4d9a-a1f6-4e390e6c575b" name="Changes" comment="Step 23">
+    <list default="true" id="9ea8df31-8c54-4d9a-a1f6-4e390e6c575b" name="Changes" comment="Step 22">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex6_files/sjavac_tests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ex6_files/sjavac_tests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex6_files/tests/test001.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/ex6_files/tests/test001.sjava" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,9 +20,6 @@
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="ex6" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -334,7 +337,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="633a3afa-ff37-44d3-8aaf-3a42cc184fa9" name="Default" comment="" />
+      <changelist id="9ea8df31-8c54-4d9a-a1f6-4e390e6c575b" name="Changes" comment="" />
       <created>1497252772658</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -553,14 +556,7 @@
       <option name="project" value="LOCAL" />
       <updated>1674689098015</updated>
     </task>
-    <task id="LOCAL-00031" summary="Step 23">
-      <created>1674689216354</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1674689216354</updated>
-    </task>
-    <option name="localTasksCounter" value="32" />
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -616,6 +612,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactored Patterns" />
     <MESSAGE value="Updated from" />
     <MESSAGE value="from danna" />
     <MESSAGE value="Step 1" />
@@ -640,8 +637,7 @@
     <MESSAGE value="Step 20" />
     <MESSAGE value="Step 21" />
     <MESSAGE value="Step 22" />
-    <MESSAGE value="Step 23" />
-    <option name="LAST_COMMIT_MESSAGE" value="Step 23" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 22" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -650,6 +646,29 @@
           <url>file://$PROJECT_DIR$/src/oop/ex6/syntax/TextParser.java</url>
           <line>48</line>
           <option name="timeStamp" value="162" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxParser.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="166" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java</url>
+          <line>14</line>
+          <properties class="oop.ex6.main.Sjavac" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="164" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/oop/ex6/tokenizer/Tokenizer.java</url>
+          <line>20</line>
+          <properties class="oop.ex6.tokenizer.Tokenizer" method="isReturnStatement">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="170" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
