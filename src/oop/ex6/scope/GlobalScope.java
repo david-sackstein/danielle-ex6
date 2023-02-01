@@ -1,192 +1,196 @@
 package oop.ex6.scope;
-
+import oop.ex6.scope.method.MethodCall;
+import oop.ex6.scope.method.Method;
+import oop.ex6.variableDeclaration.Type;
+import oop.ex6.variableDeclaration.Value;
+import oop.ex6.variableDeclaration.Variable;
 import java.util.ArrayList;
+import static oop.ex6.exceptions.ExceptionMessages.*;
 
-/**
- *
- */
+
 public class GlobalScope extends Scope {
-    public ArrayList<Variable> globalVariables;
-    public ArrayList<Variable> unresolvedVariables;
-    public ArrayList<MethodInvocation> unresolvedMethods;
-    public ArrayList<MethodScope> methods;
+    public final ArrayList<Variable> globalVariables = new ArrayList<>();
+    public final ArrayList<Variable> unresolvedVariables = new ArrayList<>();
+    public final ArrayList<MethodCall> unresolvedMethods = new ArrayList<>();
+    public final ArrayList<Method> methods = new ArrayList<>();
+
 
     public GlobalScope() {
         super(null);
-        globalVariables = new ArrayList<Variable>();
-        unresolvedVariables = new ArrayList<Variable>();
-        unresolvedMethods = new ArrayList<MethodInvocation>();
-        methods = new ArrayList<MethodScope>();
     }
 
+
+
     /**
-     * @param methodToAdd
-     * @throws Exception
+     * Adds a Method to the list of methods in the current scope
+     * @param methodAdd The Method object to add
+     * @throws Exception If a Method with the same name as `methodToAdd` already exists in the current scope
      */
     @Override
-    public void addMethod(MethodScope methodToAdd) throws Exception {
-        for (MethodScope method : methods) {
-            if (method.methodName().equals(methodToAdd.methodName())) {
-                throw new Exception("MethodScope name already exists");
+    public void methodInScope(Method methodAdd) throws Exception {
+        for (Method method : methods){
+
+            throwExceptionByCondition(
+                    ()-> method.getMethodName().equals(methodAdd.getMethodName()), METHOD_NAME_EXISTS);
+        }
+        methods.add(methodAdd);
+
+        //remove from unresolvedMethods array:
+        ArrayList<MethodCall> removeArray = new ArrayList<>();
+        for(MethodCall unresolved : unresolvedMethods) {
+            if (unresolved.methodNameMatch(methodAdd)) {
+                removeArray.add(unresolved);
             }
         }
-        methods.add(methodToAdd);
-        resolveMethod(methodToAdd);
+        for(MethodCall methodRemove : removeArray) {
+            unresolvedMethods.remove(methodRemove);
+        }
     }
 
+
     /**
-     * @param variable
-     * @throws Exception
+     * Adds a Variable to the global scope
+     * @param variable The Variable object to add
+     * @throws Exception If a variable with the same name as `variable` already exists in the global scope
      */
     @Override
-    public void addVariable(Variable variable) throws Exception {
+    public void variableInScope(Variable variable) throws Exception {
 
-        Variable v = findVariable(variable.name, globalVariables);
-        if (v != null) {
-            throw new Exception("Cannot redeclare local variable in global scope");
-        }
+        Variable v = searchForVariableInScope(variable.getName(), globalVariables);
+
+        throwExceptionByCondition(()-> v != null, ILLEGAL_REDECLARE);
 
         globalVariables.add(variable);
-        resolveVariable(variable);
+
+        // remove from unresolved array
+        ArrayList<Variable> removeArray = new ArrayList<>();
+
+        for (Variable unresolvedVar : unresolvedVariables) {
+            throwExceptionByCondition(
+                    ()->variable.getLastAssignedValue() == unresolvedVar, ASSIGNMENT_WITH_UNRESOLVED);
+
+            if (unresolvedVar.getName().equals(variable.getName())) {
+                removeArray.add(unresolvedVar);
+            }
+        }
+
+        for (Variable methodRemove : removeArray) {
+            unresolvedVariables.remove(methodRemove);
+        }
     }
 
+
+
     /**
-     * @param variable
-     * @param initializer
-     * @throws Exception
+     * Throws an Exception indicating that assignments are not allowed in the global scope
+     * @param variable The Variable object to assign a value to
+     * @param value The Value to assign to `variable`
+     * @throws Exception Always thrown with the message "Assignments are not allowed in the global scope"
      */
     @Override
-    public void addAssignment(Variable variable, TypedValue initializer) throws Exception {
-        throw new Exception("Assignments are not allowed in the global scope");
+    public void assignmentInScope(Variable variable, Value value) throws Exception {
+        throw new Exception(ASSIGNMENT_IN_GLOBAL_SCOPE);
     }
 
+
     /**
-     * @param invocation
-     * @throws Exception
+     * Throws an Exception indicating that MethodScope invocations are not allowed in the global scope
+     * @param methodCall The MethodCall object to invoke
+     * @throws Exception Always thrown with the message "MethodScope invocation is not allowed in the global scope"
      */
     @Override
-    public void addInvocation(MethodInvocation invocation) throws Exception {
-        throw new Exception("MethodScope invocation is not allowed in the global scope");
+    public void methodCallInScope(MethodCall methodCall) throws Exception {
+        throw new Exception(METHOD_CALL_IN_GLOBAL_SCOPE);
     }
 
+
+
     /**
-     * @param name
-     * @param type
-     * @return
-     * @throws Exception
+     * Searches for a Variable with the given name and type in the global scope
+     * If the variable is not found, creates a new unresolved Variable with the given name and type,
+     * adds it to the list of unresolved variables and returns it.
+     * @param name The name of the Variable to search for
+     * @param type The type of the Variable to search for
+     * @return The Variable object if found, or an unresolved Variable object with the
+     * given name and type if not found.
+     * @throws Exception If an error occurs during the search
      */
     @Override
-    public Variable findVariable(String name, TypedValue.Type type) throws Exception {
+    public Variable searchVariableInScope(String name, Type type) throws Exception {
 
-        Variable v = super.findVariable(name, type, globalVariables);
+        Variable v = super.searchVariableInScope(name, type, globalVariables);
         if (v != null) {
             return v;
         }
 
-        Variable unresolved = new Variable(name, type);
-        unresolved.addAssignment(new TypedValue(type));
-        unresolvedVariables.add(unresolved);
+        Variable newVariable = new Variable(name, type);
+        newVariable.addAssignment(new Value(type));
+        unresolvedVariables.add(newVariable);
 
-        return unresolved;
+        return newVariable;
     }
 
     /**
-     * @param invocation
-     * @return
-     * @throws Exception
+     * Searches for a Method with the given MethodCall object
+     * If the Method is not found, adds the MethodCall object to the
+     * list of unresolved methods and returns `null`.
+     * @param methodCall The MethodCall object to search for
+     * @return The Method object if found, or `null` if not found
      */
     @Override
-    public MethodScope findMethod(MethodInvocation invocation) throws Exception {
-        for (MethodScope method : methods) {
-            if (invocation.methodName.equals(method.methodName())) {
+    public Method searchForMethod(MethodCall methodCall){
+        for (Method method : methods) {
+            if (methodCall.methodNameMatch(method)) {
                 return method;
             }
         }
-        unresolvedMethods.add(invocation);
+        unresolvedMethods.add(methodCall);
         return null;
     }
 
+
+
     /**
-     * @throws Exception
+     * Throws an Exception indicating that Return statements are not allowed in the global scope
+     * @throws Exception Always thrown with the message "Return statement is not allowed in global scope"
      */
     @Override
-    public void returnFromScope() throws Exception {
-        throw new Exception("Return statement is not allowed in global scope");
+    public void returnInScope() throws Exception {
+        throw new Exception(RETURN_IN_GLOBAL_SCOPE);
     }
 
+
+
     /**
-     * @return
-     * @throws Exception
+     * Throws an exception as end of scope is not allowed in global scope.
+     * @throws Exception with message END_SCOPE_GLOBAL_SCOPE
      */
     @Override
-    public Scope endOfScope() throws Exception {
-        throw new Exception("End of scope is not allowed in global scope");
+    public Scope endScope() throws Exception {
+        throw new Exception(END_SCOPE_GLOBAL_SCOPE);
     }
+
 
     /**
-     * @throws Exception
+     * Asserts that there are no unresolved variables or methods.
+     * @throws Exception with message "There are unresolved variables" if unresolvedVariables.size() > 0
+     * @throws Exception with message "There are unresolved methods" if unresolvedMethods.size() > 0
      */
-    public void assertNoUnresolvedNames() throws Exception {
-        if (unresolvedVariables.size() > 0) {
-            throw new Exception("There are unresolved variables");
-        }
-        if (unresolvedMethods.size() > 0) {
-            throw new Exception("There are unresolved methods");
-        }
+    public void checkForUnresolvedNames() throws Exception {
+        throwExceptionByCondition( () -> !unresolvedVariables.isEmpty(), UNRESOLVED_VARIABLES);
+        throwExceptionByCondition(() -> !unresolvedMethods.isEmpty(), UNRESOLVED_METHODS);
     }
+
 
     /**
-     * @param name
-     * @param variableList
-     * @return
+     * Searches for a variable in the list of variables, by name only.
+     * @param name The name of the variable to search for
+     * @param variableList The list of variables to search in
+     * @return The variable if found, null otherwise
      */
-    private Variable findVariable(String name, ArrayList<Variable> variableList) {
-        for (Variable variable : variableList) {
-            if (variable.name.equals(name)) {
-                return variable;
-            }
-        }
-        return null;
+    private Variable searchForVariableInScope(String name, ArrayList<Variable> variableList) {
+        return super.searchVariableInScope(name, Type.Any, variableList);
     }
 
-    /**
-     * @param methodToAdd
-     */
-    private void resolveMethod(MethodScope methodToAdd) {
-        ArrayList<MethodInvocation> removeList = new ArrayList<MethodInvocation>();
 
-        for(MethodInvocation unresolved : unresolvedMethods) {
-            if (unresolved.methodName.equals(methodToAdd.methodName())) {
-                removeList.add(unresolved);
-            }
-        }
-        for(MethodInvocation toRemove : removeList) {
-            unresolvedMethods.remove(toRemove);
-        }
-    }
-
-    /**
-     * @param variable
-     * @throws Exception
-     */
-    private void resolveVariable(Variable variable) throws Exception {
-        ArrayList<Variable> removeList = new ArrayList<Variable>();
-        for (Variable unresolved : unresolvedVariables) {
-            if (variable.getAssignedValue() == unresolved) {
-                // prevents
-                // int a = a;
-                // and
-                // int a = b;
-                // int b = 2;
-                throw new Exception("Global variables must not be assigned unresolved variables");
-            }
-            if (unresolved.name.equals(variable.name)) {
-                removeList.add(unresolved);
-            }
-        }
-
-        for (Variable toRemove : removeList) {
-            unresolvedVariables.remove(toRemove);
-        }
-    }
 }

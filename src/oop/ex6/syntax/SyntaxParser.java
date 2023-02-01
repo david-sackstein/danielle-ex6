@@ -1,447 +1,217 @@
 package oop.ex6.syntax;
-
 import oop.ex6.scope.*;
+import oop.ex6.scope.ifOrWhile.IfWhileScope;
+import oop.ex6.scope.method.Method;
+import oop.ex6.scope.method.MethodCall;
 import oop.ex6.tokenizer.Tokenizer;
-
+import oop.ex6.variableDeclaration.Type;
+import oop.ex6.variableDeclaration.Value;
+import oop.ex6.variableDeclaration.Variable;
 import java.util.ArrayList;
-import java.util.Objects;
+
+import static oop.ex6.exceptions.ExceptionMessages.*;
 
 /**
- * SyntaxAnalyzer uses a LexicalAnalyzer to break javaS text into tokens and
- * creates language elements from those tokens.
+ * breaks javaS text into Strings, and creates Variables/Methods etc. out of them.
  */
 public class SyntaxParser {
 
-    private final Tokenizer tokenizer;
 
-    public SyntaxParser() {
-        tokenizer = new Tokenizer();
-    }
-
-    /**
-     * Accepts a line of text and interprets it within the context of the current scope or throws an exception if
-     * the line was invalid, either at the textual level or at the level of the language syntax.
-     * parse checks the possibility that the line may match any of all allowed syntactical structures.
-     *
-     * @param line
-     * @param scope
-     * @return returns the scope that is active after the line is read. For instance, if the line is method invocation
-     * or a variable declaration, the scope is the same scope provided as an argument. However if the line represents
-     * a method declaration or the start of a conditional block, then the method or conditional block respectively
-     * are returned as they themselves represent new scopes.
-     * @throws Exception
+    /** finds the relevant scope after reading the given line.
+     * @param line the given line.
+     * @param currentScope the scope the line is part of.
+     * @return the relevant scope after the line is read.
+     * @throws Exception if something was illegal.
      */
-    public Scope parse(String line, Scope scope) throws Exception {
+    public Scope parseIntoScope(String line, Scope currentScope) throws Exception {
 
-        if (tokenizer.isCommentOrEmptyLine(line)) {
-            return scope;
+        if (Tokenizer.isCommentOrEmptyLine(line)) {
+            return currentScope;
         }
 
-        if (addVariablesDeclarations(line, scope)) {
-            return scope;
+        if (Tokenizer.isReturnStatement(line)) {
+            currentScope.returnInScope();
+            return currentScope;
         }
 
-        if (doAssignments(line, scope)) {
-            return scope;
+        if (Tokenizer.isEndOfBlock(line)) {
+            return currentScope.endScope();
         }
 
-        Scope method = createMethodScope(line, scope);
-        if (method != null) {
-            return method;
+        if (saveVariablesToScope(line, currentScope)) {
+            return currentScope;
         }
 
-        if (doMethodInvocation(line, scope)) {
-            return scope;
+        if (assignVariable(line, currentScope)) {
+            return currentScope;
         }
 
-        if (tokenizer.isReturnStatement(line)) {
-            scope.returnFromScope();
-            return scope;
+        if (isLineLegalMethodCall(line)) {
+            MethodCall.runMethodCall(line, currentScope);
+            return currentScope;
         }
 
-        if (tokenizer.isEndOfBlock(line)) {
-            return scope.endOfScope();
-        }
-
-        Scope conditionalBlock = createConditionalScope(line, scope);
+        Scope conditionalBlock = IfWhileScope.createIfWhileScope(line, currentScope);
         if (conditionalBlock != null) {
             return conditionalBlock;
         }
 
-        tokenizer.splitMethodInvocation(line);
+        Scope method = Method.lineToMethodScope(line, currentScope);
+        if (method != null) {
+            return method;
+        }
 
-        throw new Exception("Unrecognized syntax");
+        Tokenizer.splitMethodCall(line);
+        Scope.throwExceptionByCondition(()->true, ILLEGAL_SYNTAX);
+        return null;
     }
+
+
+
+    private boolean isLineLegalMethodCall(String line){
+        ArrayList<ArrayList<String>> splited = Tokenizer.splitMethodCall(line);
+        return (splited != null);
+    }
+
 
     /**
-     * @param line
-     * @param scope
-     * @return
-     * @throws Exception
+     This method handles the assignments of different variable types
+     (int, double, char, string, boolean).
+     @param line the line of code to be parsed
+     @param scope the scope in which the variable is to be saved
+     @return true if an assignment was done, false otherwise
+     @throws Exception if there was an error in the assignment
+     (e.g. invalid variable type, final variable being reassigned, etc.)
      */
-    private MethodScope createMethodScope(String line, Scope scope) throws Exception {
-        ArrayList<ArrayList<String>> arrayLists = tokenizer.splitMethodDeclaration(line);
-        if (arrayLists == null) {
-            return null;
-        }
-        MethodDeclaration methodDeclaration = getMethodDeclaration(arrayLists);
-        MethodScope method = new MethodScope(scope);
-        method.methodDeclaration = methodDeclaration;
-
-        scope.addMethod(method);
-
-        return method;
-    }
-
-    /**
-     * @param line
-     * @param scope
-     * @return
-     * @throws Exception
-     */
-    private boolean doMethodInvocation(String line, Scope scope) throws Exception {
-        ArrayList<ArrayList<String>> arrayLists = tokenizer.splitMethodInvocation(line);
-        if (arrayLists == null) {
-            return false;
-        }
-        MethodInvocation invocation = getMethodInvocation(scope, arrayLists);
-        scope.addInvocation(invocation);
-        return true;
-    }
-
-    /**
-     * @param line
-     * @param scope
-     * @return
-     * @throws Exception
-     */
-    private ConditionalScope createConditionalScope(String line, Scope scope) throws Exception {
-        ArrayList<ArrayList<String>> arrayLists = tokenizer.splitBlockCondition(line);
-        if (arrayLists == null) {
-            return null;
-        }
-        return getConditionalBlock(arrayLists, scope);
-    }
-
-    /**
-     * @param arrayLists
-     * @param scope
-     * @return
-     * @throws Exception
-     */
-    private ConditionalScope getConditionalBlock(ArrayList<ArrayList<String>> arrayLists, Scope scope) throws Exception {
-
-        ConditionalScope.BlockType blockType = getBlockType(arrayLists.get(0).get(0));
-
-        ConditionalScope conditionalScope = new ConditionalScope(scope, blockType);
-
-        for (int i = 1; i < arrayLists.size(); i++) {
-
-            String conditionExpression = arrayLists.get(i).get(1);
-
-            if (tokenizer.isTypeMatch(TypedValue.Type.Boolean, conditionExpression) ||
-                tokenizer.isTypeMatch(TypedValue.Type.Int, conditionExpression) ||
-                tokenizer.isTypeMatch(TypedValue.Type.Double, conditionExpression)) {
-                continue;
-            }
-
-            if (tokenizer.isNotNameOfVariable(conditionExpression)) {
-                throw new Exception("The regex failed");
-            }
-
-            Variable variable = getVariableInitializer(
-                scope,
-                conditionExpression,
-                TypedValue.Type.Boolean, TypedValue.Type.Int, TypedValue.Type.Double);
-        }
-
-        return conditionalScope;
-    }
-
-    private ConditionalScope.BlockType getBlockType(String blockTypeString) {
-        return blockTypeString.trim().equals("if") ? ConditionalScope.BlockType.IfBlock : ConditionalScope.BlockType.WhileLoop;
-    }
-
-    /**
-     * @param scope
-     * @param arrayLists
-     * @return
-     * @throws Exception
-     */
-    private MethodInvocation getMethodInvocation(Scope scope, ArrayList<ArrayList<String>> arrayLists) throws Exception {
-
-        MethodInvocation invocation = new MethodInvocation();
-        invocation.methodName = arrayLists.get(0).get(0);
-
-        for (int i = 1; i < arrayLists.size(); i++) {
-
-            String argumentToken = arrayLists.get(i).get(1);
-            TypedValue typedValue = createTypedValueArgument(scope, argumentToken);
-            invocation.arguments.add(typedValue);
-        }
-        return invocation;
-    }
-
-    /**
-     * @param scope
-     * @param argumentToken
-     * @return
-     * @throws Exception
-     */
-    private TypedValue createTypedValueArgument(Scope scope, String argumentToken) throws Exception {
-        if (tokenizer.isTypeMatch(TypedValue.Type.Int, argumentToken)) {
-            return new TypedValue(TypedValue.Type.Int);
-        }
-        if (tokenizer.isTypeMatch(TypedValue.Type.Double, argumentToken)) {
-            return new TypedValue(TypedValue.Type.Double);
-        }
-        if (tokenizer.isTypeMatch(TypedValue.Type.String, argumentToken)) {
-            return new TypedValue(TypedValue.Type.String);
-        }
-        if (tokenizer.isTypeMatch(TypedValue.Type.Char, argumentToken)) {
-            return new TypedValue(TypedValue.Type.Char);
-        }
-        if (tokenizer.isTypeMatch(TypedValue.Type.Boolean, argumentToken)) {
-            return new TypedValue(TypedValue.Type.Boolean);
-        }
-        Variable variable = scope.findVariable(argumentToken, TypedValue.Type.Any);
-        if (!variable.isInitialized()) {
-            throw new Exception("Uninitialized arguments passed to method");
-        }
-        return variable;
-    }
-
-    /**
-     * @param arrayLists
-     * @return
-     * @throws Exception
-     */
-    private MethodDeclaration getMethodDeclaration(ArrayList<ArrayList<String>> arrayLists) throws Exception {
-
-        MethodDeclaration methodDeclaration = new MethodDeclaration();
-
-        methodDeclaration.methodName = arrayLists.get(0).get(0);
-
-        for (int i = 1; i < arrayLists.size(); i++) {
-
-            ArrayList<String> argumentTokens = arrayLists.get(i);
-
-            Variable variable = getVariable(argumentTokens);
-
-            methodDeclaration.addVariable(variable);
-        }
-
-        return methodDeclaration;
-    }
-
-    /**
-     * @param argumentTokens
-     * @return
-     * @throws Exception
-     */
-    private Variable getVariable(ArrayList<String> argumentTokens) throws Exception {
-
-        boolean isFinal = argumentTokens.get(1).equals("final");
-        int start = isFinal ? 1 : 0;
-
-        String nameString = argumentTokens.get(start + 2);
-        String typeString = argumentTokens.get(start + 1);
-
-        TypedValue.Type type = tokenizer.getTypeFromString(typeString);
-        Variable variable = new Variable(nameString, type);
-        variable.isFinal = isFinal;
-        variable.addInitializer(new TypedValue(type)); // because arguments passed to a method must have been initialized
-
-        return variable;
-    }
-
-    /**
-     * @param line
-     * @param scope
-     * @return
-     * @throws Exception
-     */
-    private boolean doAssignments(String line, Scope scope) throws Exception {
-        ArrayList<ArrayList<String>> arrayLists = tokenizer.splitAssignmentInt(line);
+    private boolean assignVariable(String line, Scope scope) throws Exception {
+        ArrayList<ArrayList<String>> arrayLists = Tokenizer.splitAssignmentInt(line);
         if (arrayLists != null) {
-            doAssignments(scope, arrayLists, TypedValue.Type.Int);
+            assignTypedVariable(scope, arrayLists, Type.Int);
             return true;
         }
-        arrayLists = tokenizer.splitAssignmentString(line);
+        arrayLists = Tokenizer.splitAssignmentString(line);
         if (arrayLists != null) {
-            doAssignments(scope, arrayLists, TypedValue.Type.String);
+            assignTypedVariable(scope, arrayLists, Type.String);
             return true;
         }
-        arrayLists = tokenizer.splitAssignmentDouble(line);
+        arrayLists = Tokenizer.splitAssignmentDouble(line);
         if (arrayLists != null) {
-            doAssignments(scope, arrayLists, TypedValue.Type.Double);
+            assignTypedVariable(scope, arrayLists, Type.Double);
             return true;
         }
-        arrayLists = tokenizer.splitAssignmentBoolean(line);
+        arrayLists = Tokenizer.splitAssignmentBoolean(line);
         if (arrayLists != null) {
-            doAssignments(scope, arrayLists, TypedValue.Type.Boolean);
+            assignTypedVariable(scope, arrayLists, Type.Boolean);
             return true;
         }
-        arrayLists = tokenizer.splitAssignmentChar(line);
+        arrayLists = Tokenizer.splitAssignmentChar(line);
         if (arrayLists != null) {
-            doAssignments(scope, arrayLists, TypedValue.Type.Char);
+            assignTypedVariable(scope, arrayLists, Type.Char);
             return true;
         }
         return false;
     }
 
+
+
     /**
-     * @param scope
-     * @param arrayLists
-     * @param type
-     * @throws Exception
+     This method performs the assignment of a variable in a given scope.
+     @param scope the scope in which the variable is to be assigned
+     @param splited an array of tokens representing the assignment statement
+     @param type the type of the variable being assigned
+     @throws Exception if there was an error in the assignment (e.g. invalid variable type, final variable being reassigned, etc.)
      */
-    private void doAssignments(Scope scope, ArrayList<ArrayList<String>> arrayLists, TypedValue.Type type) throws Exception {
-        for (ArrayList<String> tokens : arrayLists) { // TODO are we allowed more than one
-            String name = tokens.get(1);
-            Variable variable = scope.findVariable(name, type);
-            if (variable == null) {
-                throw new Exception("No such variable " + name);
-            }
-            if (variable.type != type) {
-                throw new Exception("Assigned to incorrect type");
-            }
-            if (variable.isFinal) {
-                throw new Exception("Cannot assign a value to a final variable");
-            }
-            scope.addAssignment(variable, getInitializer(scope, tokens, type));
+    private void assignTypedVariable(Scope scope, ArrayList<ArrayList<String>> splited, Type type)
+            throws Exception{
+        for (ArrayList<String> part : splited) {
+            String name = part.get(1);
+            Variable variable = scope.searchVariableInScope(name, type);
+
+            // throw exceptions
+            Scope.throwExceptionByCondition(()->(variable == null),
+                    varUnfound(name));
+            Scope.throwExceptionByCondition(()->(variable.getType() != type),
+                    assignmentOfWrongTypes(type, variable.getType()));
+            Scope.throwExceptionByCondition(()->variable.getFinalIndicator(),
+                    FINAL_VARIABLE_ASSIGNMENT);
+
+            scope.assignmentInScope(variable, Value.intialize(scope, part, type));
         }
     }
 
-    /**
-     * @param line
-     * @param scope
-     * @return
-     * @throws Exception
-     */
-    private boolean addVariablesDeclarations(String line, Scope scope) throws Exception {
 
-        ArrayList<ArrayList<String>> tokens = tokenizer.splitDeclarationInt(line);
-        if (tokens != null) {
-            addVariablesDeclarations(scope, tokens, TypedValue.Type.Int);
+
+    /**
+     This method saves variables of different types
+     (int, double, char, string, boolean) to the specified scope.
+     @param line the line of code to be parsed
+     @param scope the scope in which the variable is to be saved
+     @return true if the variable was saved, false otherwise
+     @throws Exception if there was an error in saving the variable
+     (e.g. invalid variable type, variable already exists
+     */
+    private boolean saveVariablesToScope(String line, Scope scope) throws Exception {
+
+        ArrayList<ArrayList<String>> splited = Tokenizer.splitDeclarationString(line);
+        if (splited != null) {
+            saveTypedVariablesToScope(scope, splited, Type.String);
             return true;
         }
-        tokens = tokenizer.splitDeclarationString(line);
-        if (tokens != null) {
-            addVariablesDeclarations(scope, tokens, TypedValue.Type.String);
+        splited = Tokenizer.splitDeclarationChar(line);
+        if (splited != null) {
+            saveTypedVariablesToScope(scope, splited, Type.Char);
             return true;
         }
-        tokens = tokenizer.splitDeclarationDouble(line);
-        if (tokens != null) {
-            addVariablesDeclarations(scope, tokens, TypedValue.Type.Double);
+        splited = Tokenizer.splitDeclarationDouble(line);
+        if (splited != null) {
+            saveTypedVariablesToScope(scope, splited, Type.Double);
             return true;
         }
-        tokens = tokenizer.splitDeclarationBoolean(line);
-        if (tokens != null) {
-            addVariablesDeclarations(scope, tokens, TypedValue.Type.Boolean);
+        splited = Tokenizer.splitDeclarationBoolean(line);
+        if (splited != null) {
+            saveTypedVariablesToScope(scope, splited, Type.Boolean);
             return true;
         }
-        tokens = tokenizer.splitDeclarationChar(line);
-        if (tokens != null) {
-            addVariablesDeclarations(scope, tokens, TypedValue.Type.Char);
+        splited = Tokenizer.splitDeclarationInt(line);
+        if (splited != null) {
+            saveTypedVariablesToScope(scope, splited, Type.Int);
             return true;
         }
         return false;
     }
 
+
+
     /**
-     * @param scope
-     * @param arrayLists
-     * @param type
-     * @throws Exception
+     Adds variables declarations to the scope.
+     @param scope The scope in which the variables are being declared.
+     @param splited A list of lists of strings split from the input source code.
+     @param type The type of the variables being declared.
+     @throws Exception if the input array is empty or if a final variable is not initialized.
      */
-    private void addVariablesDeclarations(Scope scope, ArrayList<ArrayList<String>> arrayLists, TypedValue.Type type) throws Exception {
+    private void saveTypedVariablesToScope(
+            Scope scope, ArrayList<ArrayList<String>> splited, Type type) throws Exception {
 
-        if (arrayLists.size() == 0) {
-            throw new SyntaxException("No tokens");
+        Scope.throwExceptionByCondition(()->splited.isEmpty(), EMPTY_ARRAY);
+
+        // has final statement
+        boolean hasFinalStatement = splited.get(0).get(1).equals("final");
+        if (hasFinalStatement) {
+            splited.remove(0);
         }
-
-        int index = 0;
-
-        ArrayList<String> finalGroup = arrayLists.get(index);
-        boolean isFinal = Objects.equals(finalGroup.get(1), "final");
-
-        if (isFinal) {
-            index++;
-        }
-
-        ArrayList<String> typeGroup = arrayLists.get(index++);
-        typeGroup.get(1);
-
-        for (; index < arrayLists.size(); index++) {
-
-            ArrayList<String> partialDeclarationGroup = arrayLists.get(index);
-            String name = partialDeclarationGroup.get(1);
+        splited.remove(0);
+        for (ArrayList<String> partString : splited){
+            String name = partString.get(1);
 
             Variable variable = new Variable(name, type);
-            variable.isFinal = isFinal;
+            variable.setFinalIndicator(hasFinalStatement);
+            variable.initializeVariableWithValue(
+                Value.intialize(scope, partString, type));
 
-            variable.addInitializer(
-                getInitializer(scope, partialDeclarationGroup, type));
+            Scope.throwExceptionByCondition(
+                    ()->(hasFinalStatement && variable.notYetInitialized()), UNINITIALIZED_FINAL);
 
-            if (isFinal && !variable.isInitialized()) {
-                throw new SyntaxException("Final declarations must be initialized");
-            }
-
-            scope.addVariable(variable);
+            scope.variableInScope(variable);
         }
-    }
-
-    /**
-     * @param scope
-     * @param tokens
-     * @param expectedType
-     * @return
-     * @throws Exception
-     */
-    private TypedValue getInitializer(Scope scope, ArrayList<String> tokens, TypedValue.Type expectedType) throws Exception {
-        if (tokens.size() <= 2) { // no assignment
-            return null;
-        }
-
-        String rightSide = tokens.get(3);
-
-        if (tokenizer.isTypeMatch(expectedType, rightSide)) {
-            return new TypedValue(expectedType);
-        }
-
-        if (tokenizer.isNotNameOfVariable(rightSide)) {
-            throw new Exception("Invalid type or variable methodName");
-        }
-
-        Variable variable = getVariableInitializer(scope, rightSide, expectedType);
-
-        return variable;
-    }
-
-    /**
-     * @param scope
-     * @param variableName
-     * @param typeArray
-     * @return
-     * @throws Exception
-     */
-    private Variable getVariableInitializer(Scope scope, String variableName, TypedValue.Type... typeArray) throws Exception {
-        for (TypedValue.Type type : typeArray) {
-            Variable variable = scope.findVariable(variableName, type);
-            if (variable == null) {
-                continue;
-            }
-
-            if (variable.type != type) {
-                throw new Exception("Left and right sides of an assignment have different types");
-            }
-
-            if (!variable.isInitialized()) {
-                throw new Exception("Use of uninitialized variable " + variableName + " in expression");
-            }
-            return variable;
-        }
-        throw new Exception("Could not find variable " + variableName + " in scope");
     }
 }

@@ -1,0 +1,89 @@
+ellis.ackstein
+talia.dym
+
+
+
+**** design, focus on non trivial decisions ****
+
+The task required a large number of operations and support in many different cases.
+To maintain order throughout the implementation, we used the principle of encapsulation:
+we divided the departments into detailed packages. We will explain our design choices on several packages.
+
+scope package:
+    We used the principle of polymorphism:
+    we created 2 abstract classes to support the behavior of the scopes (in the scope package).
+    1. Scope abstract class: the super class of all the scopes: global, method, if, while.
+    2. NonGlobalScope abstract class: extends Scope, the super class of the scopes: method, if, while.
+
+method package:
+    this package is an inner package of scope, because it deals with the method scope.
+    Method is the class representing a method declared in the code.
+    MethodSignature is the class representing the signature of a method.
+    MethodCall is the class representing a call to a method in the code.
+    each one of the classes contains also static methods, converting strings from code into the class type.
+    these methods are used in SyntaxParser, but we decided to place them in the methods classes in order to
+    keep division into focused subjects between the classes.
+
+variableDeclaration package:
+    this package supports with all cases using types, variables declaration, value assignments etc.
+    We created an Enum for the types (Type).
+    We created a class representing a variable: Variable, and a class representing a value: Value.
+    The Variable class holds a stack of assigned values that are pushed when assigned in the scope
+    and are popped when the scope ends.
+
+
+**** description for each S-java test-file ****
+
+test001.sjavac: method definition has white space inside the name of the method (1).
+test002.sjavac: method definition with legal method name (0).
+test003.sjavac: assignment of a String value to a boolean variable (1).
+test004.sjavac: comment on the same line as } (1).
+test005.sjavac: method declaration with out a return statement in the end (1).
+test006.sjavac: assignment of a int value to a boolean variable (0).
+test007.sjavac: variable declaration with no ; in the end (1).
+test008.sjavac: variable declaration with illegal name (1).
+test009.sjavac: variable declaration with llegal name (0).
+test010.sjavac: comment with a space before the // (1).
+test011.sjavac: legal comment (0).
+test012.sjavac: legal calling method with args (0).
+test013.sjavac: method declaration with 2 arguments sharing the same name (1).
+test014.sjavac: variable declaration using 2 lines (1).
+test015.sjavac: 2 global variables with the same name (1).
+test016.sjavac: multiply variable of the same type declared in the same line (0).
+test017.sjavac: two local variable with the same name defined inside different blocks,
+                one is nested in the other (0).
+test018.sjavac: final modifier after type (1).
+test019.sjavac: use of the static modifier in variable declaration (1).
+test020.sjavac: initialized with  value after declaration time (1).
+
+**** 6.1 - exceptions ****
+
+To determine final return values (0/1/2) we used exception throwing.
+We implemented the program so that in case of illegal code, the program throws an Exception. We turned
+the exceptions informative using messages from the ExceptionMessages class.
+If an exception was raised during the process,
+we made sure to forward the exception to the final function that determines the return values,
+and thus the return value is determined according to the exception.
+2 will be returned if an IOException was thrown in the program.
+1 will be return if an Exception (different from IOException) was thrown in the program.
+0 will be returned if no exception was thrown.
+
+**** 6.2 - object oriented design ****
+
+add new types:
+    1) add the types to the enum (variableDeclaration.Type).
+    2) expand the implementation of Value, Tokenizer, SyntaxParser, Assignment, Declaration, Literals
+    RegexDeclarations, RegexAssignment, RegexLiterals to support values of the new types.
+    In particular, we will add conditions to the appropriate functions in order to support the
+    special features of these type.
+    Implementation which supports simple adding of new type like Factory, was not possible to use,
+    because each type has different features, and the use of them is complicated and spread over many levels
+    in the code.
+
+Different methods return types:
+
+
+Using methods of standard java:
+
+
+**** 6.3 - regular expressions****

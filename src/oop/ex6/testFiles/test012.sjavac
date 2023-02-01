@@ -1,0 +1,7 @@
+void foo(int a, int b){
+int c = a + b;
+return;
+}
+
+
+foo(1, 2);

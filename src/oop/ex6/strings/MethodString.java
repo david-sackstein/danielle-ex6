@@ -5,7 +5,7 @@ import static oop.ex6.strings.Primitives.*;
 /**
  * RegexStrings generates all the regex strings required by the RegexFactory
  */
-public class Method {
+public class MethodString {
 
     public static final String ARGUMENT = OPTIONAL_FINAL + ANY_TYPE + WHITESPACES + NAME_OF_VARIABLE;
     public static final String DECLARATION = getDeclaration();
@@ -14,7 +14,8 @@ public class Method {
     public static final String CALL = getCall();
 
     private static String getDeclaration() {
-        return Helper.getMethodOrCondition("void" + WHITESPACES + NAME_OF_METHOD, ARGUMENT, ",", "?", "\\{");
+        return Helper.getMethodOrCondition("void" + WHITESPACES + NAME_OF_METHOD, ARGUMENT,
+                ",", "?", "\\{");
     }
 
     private static String getArgumentValue() {

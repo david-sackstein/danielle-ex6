@@ -11,6 +11,6 @@ public class RegexDeclarations {
     public static final Pattern BOOLEAN = Pattern.compile(Declarations.BOOLEAN);
     public static final Pattern CHAR = Pattern.compile(Declarations.CHAR);
 
-    public static final Pattern ARGUMENT = Pattern.compile(Method.ARGUMENT);
-    public static final Pattern METHOD = Pattern.compile(Method.DECLARATION);
+    public static final Pattern ARGUMENT = Pattern.compile(MethodString.ARGUMENT);
+    public static final Pattern METHOD = Pattern.compile(MethodString.DECLARATION);
 }

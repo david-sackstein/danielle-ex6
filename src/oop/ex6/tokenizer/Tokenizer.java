@@ -1,8 +1,6 @@
 package oop.ex6.tokenizer;
-
-import oop.ex6.scope.*;
 import oop.ex6.regex.*;
-
+import oop.ex6.variableDeclaration.Type;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -13,106 +11,103 @@ import java.util.regex.Pattern;
  */
 public class Tokenizer {
 
-    public boolean isCommentOrEmptyLine(String line) {
+    public static boolean isCommentOrEmptyLine(String line) {
         return RegexPrimitives.COMMENT_LINE.matcher(line).matches() ||
                 RegexPrimitives.EMPTY_LINE.matcher(line).matches();
     }
 
-    public boolean isReturnStatement(String line) {
+    public static boolean isReturnStatement(String line) {
         return RegexPrimitives.RETURN_STATEMENT.matcher(line).matches();
     }
 
-    public boolean isEndOfBlock(String line) {
+    public static boolean isEndOfBlock(String line) {
         return RegexPrimitives.END_OF_BLOCK.matcher(line).matches();
     }
 
-    public boolean isNotNameOfVariable(String token) {
+    public static boolean isNotNameOfVariable(String token) {
         return ! RegexPrimitives.NAME_OF_VARIABLE.matcher(token).matches();
     }
 
-    public boolean isTypeMatch(TypedValue.Type expectedType, String rightSide) {
-        if (expectedType == TypedValue.Type.Int && isInt(rightSide)) {
+    public static boolean isTypeMatch(Type expectedType, String rightSide) {
+        if (expectedType == Type.Int && isInt(rightSide)) {
             return true;
         }
-        if (expectedType == TypedValue.Type.Boolean && isBoolean(rightSide)) {
+        if (expectedType == Type.Boolean && isBoolean(rightSide)) {
             return true;
         }
-        if (expectedType == TypedValue.Type.Double && isDouble(rightSide)) {
+        if (expectedType == Type.Double && isDouble(rightSide)) {
             return true;
         }
-        if (expectedType == TypedValue.Type.String && isString(rightSide)) {
+        if (expectedType == Type.String && isString(rightSide)) {
             return true;
         }
-        if (expectedType == TypedValue.Type.Char && isChar(rightSide)) {
-            return true;
-        }
-        return false;
+        return (expectedType == Type.Char && isChar(rightSide));
     }
 
-    public ArrayList<ArrayList<String>> splitDeclarationInt(String line) {
+    public static ArrayList<ArrayList<String>> splitDeclarationInt(String line) {
         return splitDeclaration(line, RegexDeclarations.INT, RegexAssignment.OPTIONAL_INT);
     }
 
-    public ArrayList<ArrayList<String>> splitDeclarationString(String line) {
+    public static ArrayList<ArrayList<String>> splitDeclarationString(String line) {
         return splitDeclaration(line, RegexDeclarations.STRING, RegexAssignment.OPTIONAL_STRING);
     }
 
-    public ArrayList<ArrayList<String>> splitDeclarationBoolean(String line) {
+    public static ArrayList<ArrayList<String>> splitDeclarationBoolean(String line) {
         return splitDeclaration(line, RegexDeclarations.BOOLEAN, RegexAssignment.OPTIONAL_BOOLEAN);
     }
 
-    public ArrayList<ArrayList<String>> splitDeclarationChar(String line) {
+    public static ArrayList<ArrayList<String>> splitDeclarationChar(String line) {
         return splitDeclaration(line, RegexDeclarations.CHAR, RegexAssignment.OPTIONAL_CHAR);
     }
 
-    public ArrayList<ArrayList<String>> splitDeclarationDouble(String line) {
+    public static ArrayList<ArrayList<String>> splitDeclarationDouble(String line) {
         return splitDeclaration(line, RegexDeclarations.DOUBLE, RegexAssignment.OPTIONAL_DOUBLE);
     }
 
-    public ArrayList<ArrayList<String>> splitAssignmentInt(String line) {
+    public static ArrayList<ArrayList<String>> splitAssignmentInt(String line) {
         return splitAssignmentLine(line, RegexAssignment.INT_LINE, RegexAssignment.INT);
     }
 
-    public ArrayList<ArrayList<String>> splitAssignmentString(String line) {
+    public static ArrayList<ArrayList<String>> splitAssignmentString(String line) {
         return splitAssignmentLine(line, RegexAssignment.STRING_LINE, RegexAssignment.STRING);
     }
 
-    public ArrayList<ArrayList<String>> splitAssignmentBoolean(String line) {
+    public static ArrayList<ArrayList<String>> splitAssignmentBoolean(String line) {
         return splitAssignmentLine(line, RegexAssignment.BOOLEAN_LINE, RegexAssignment.BOOLEAN);
     }
 
-    public ArrayList<ArrayList<String>> splitAssignmentChar(String line) {
+    public static ArrayList<ArrayList<String>> splitAssignmentChar(String line) {
         return splitAssignmentLine(line, RegexAssignment.CHAR_LINE, RegexAssignment.CHAR);
     }
 
-    public ArrayList<ArrayList<String>> splitAssignmentDouble(String line) {
+    public static ArrayList<ArrayList<String>> splitAssignmentDouble(String line) {
         return splitAssignmentLine(line, RegexAssignment.DOUBLE_LINE, RegexAssignment.DOUBLE);
     }
 
-    public ArrayList<ArrayList<String>> splitMethodDeclaration(String line) {
+    public static ArrayList<ArrayList<String>> splitMethodDeclaration(String line) {
         return splitMethod(line, RegexDeclarations.METHOD, RegexDeclarations.ARGUMENT);
     }
 
-    public ArrayList<ArrayList<String>> splitMethodInvocation(String line) {
+    public static ArrayList<ArrayList<String>> splitMethodCall(String line) {
         return splitMethod(line, RegexBlocks.METHOD_INVOCATION, RegexBlocks.ARGUMENT_VALUE);
     }
 
-    public ArrayList<ArrayList<String>> splitBlockCondition(String line) {
+    public static ArrayList<ArrayList<String>> splitBlockCondition(String line) {
         return splitDeclaration(line, RegexBlocks.CONDITION_BLOCK, RegexBlocks.CONDITION_EXPRESSION);
     }
 
-    public static TypedValue.Type getTypeFromString(String typeString) throws Exception {
+    public static Type getTypeFromString(String typeString) throws Exception {
         switch (typeString) {
             case "String":
-                return TypedValue.Type.String;
+                return Type.String;
             case "double":
-                return TypedValue.Type.Double;
+                return Type.Double;
             case "int":
-                return TypedValue.Type.Int;
+                return Type.Int;
             case "char":
-                return TypedValue.Type.Char;
+                return Type.Char;
             case "boolean":
-                return TypedValue.Type.Boolean;
+                return Type.Boolean;
             default:
                 throw new Exception("?");
         }
@@ -123,7 +118,7 @@ public class Tokenizer {
         Matcher matcher = patternMethod.matcher(line);
         if (matcher.matches()) {
 
-            ArrayList<ArrayList<String>> arrayLists = new ArrayList<ArrayList<String>>();
+            ArrayList<ArrayList<String>> arrayLists = new ArrayList<>();
 
             arrayLists.add(
                     getMethodName(matcher));
@@ -145,14 +140,14 @@ public class Tokenizer {
     }
 
     private static ArrayList<String> getMethodName(Matcher matcher) {
-        ArrayList<String> methodName = new ArrayList<String>();
+        ArrayList<String> methodName = new ArrayList<>();
         methodName.add(matcher.group(1));
         return methodName;
     }
 
     private static ArrayList<String> getArgumentTokens(Matcher argumentMatcher) {
 
-        ArrayList<String> tokens = new ArrayList<String>();
+        ArrayList<String> tokens = new ArrayList<>();
         for (int i = 0; i < argumentMatcher.groupCount() + 1; i++) {
             String token = argumentMatcher.group(i);
             if (token != null) {
@@ -162,7 +157,8 @@ public class Tokenizer {
         return tokens;
     }
 
-    private ArrayList<ArrayList<String>> splitDeclaration(String line, Pattern declarationPattern, Pattern assignmentPattern) {
+    private static ArrayList<ArrayList<String>> splitDeclaration(String line, Pattern declarationPattern,
+                                                          Pattern assignmentPattern) {
 
         Matcher declarationMatcher = declarationPattern.matcher(line);
 
@@ -173,7 +169,8 @@ public class Tokenizer {
         return getMatchesGroups(line, assignmentPattern);
     }
 
-    private ArrayList<ArrayList<String>> splitAssignmentLine(String line, Pattern lineMatcher, Pattern assignmentPattern) {
+    private static ArrayList<ArrayList<String>> splitAssignmentLine(String line, Pattern lineMatcher,
+                                                             Pattern assignmentPattern) {
 
         if (!lineMatcher.matcher(line).matches()) {
             return null;
@@ -182,14 +179,14 @@ public class Tokenizer {
         return getMatchesGroups(line, assignmentPattern);
     }
 
-    private ArrayList<ArrayList<String>> getMatchesGroups(String line, Pattern assignmentPattern) {
-        ArrayList<ArrayList<String>> listOfLists = new ArrayList<ArrayList<String>>();
+    private static ArrayList<ArrayList<String>> getMatchesGroups(String line, Pattern assignmentPattern) {
+        ArrayList<ArrayList<String>> listOfLists = new ArrayList<>();
 
         Matcher partialMatcher = assignmentPattern.matcher(line);
 
         while (partialMatcher.find()) {
 
-            ArrayList<String> tokens = new ArrayList<String>();
+            ArrayList<String> tokens = new ArrayList<>();
 
             for (int i = 0; i < partialMatcher.groupCount(); i++) {
                 String group = partialMatcher.group(i);
@@ -205,23 +202,23 @@ public class Tokenizer {
         return listOfLists.size() == 0 ? null : listOfLists;
     }
 
-    private boolean isInt(String token) {
+    private static boolean isInt(String token) {
         return RegexLiterals.INT.matcher(token).matches();
     }
 
-    private boolean isBoolean(String token) {
+    private static boolean isBoolean(String token) {
         return RegexLiterals.BOOLEAN.matcher(token).matches();
     }
 
-    private boolean isDouble(String token) {
+    private static boolean isDouble(String token) {
         return RegexLiterals.DOUBLE.matcher(token).matches();
     }
 
-    private boolean isString(String token) {
+    private static boolean isString(String token) {
         return RegexLiterals.STRING.matcher(token).matches();
     }
 
-    private boolean isChar(String token) {
+    private static boolean isChar(String token) {
         return RegexLiterals.CHAR.matcher(token).matches();
     }
 }
