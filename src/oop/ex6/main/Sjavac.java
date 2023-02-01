@@ -16,7 +16,7 @@ public class Sjavac {
             FileToLines linesReader = new FileToLines();
             ArrayList<String> lines =  linesReader.createNonEmptyLineArray(fileName);
 
-            for (int i = 1; i < 20; i++) {
+            for (int i = 4; i < 20; i++) {
                 RunLineTest(lines.get(i - 1));
             }
             System.out.println("PASSED");

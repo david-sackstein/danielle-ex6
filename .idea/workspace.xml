@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ea8df31-8c54-4d9a-a1f6-4e390e6c575b" name="Changes" comment="found a few bugs, need to correct, finish readme, change Sjavac.java.">
+    <list default="true" id="9ea8df31-8c54-4d9a-a1f6-4e390e6c575b" name="Changes" comment="start debug tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/README" beforeDir="false" afterPath="$PROJECT_DIR$/src/README" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test004.sjavac" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test004.sjavac" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/tests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/tests.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -341,7 +341,7 @@
       <workItem from="1674261568192" duration="9469000" />
       <workItem from="1674296426434" duration="4250000" />
       <workItem from="1675067852354" duration="46018000" />
-      <workItem from="1675193341075" duration="5308000" />
+      <workItem from="1675193341075" duration="6551000" />
     </task>
     <task id="LOCAL-00001" summary="refactored LinesReader">
       <created>1674291570228</created>
@@ -567,7 +567,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1675201657465</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL‎-00033" summary="start debug tests">
+      <created>1675244101900</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL‎-00033" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1675244101900</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -623,7 +630,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="from danna" />
     <MESSAGE value="Step 1" />
     <MESSAGE value="Step 2" />
     <MESSAGE value="Step 3" />
@@ -648,7 +654,8 @@
     <MESSAGE value="Step 22" />
     <MESSAGE value="Step 23" />
     <MESSAGE value="found a few bugs, need to correct, finish readme, change Sjavac.java." />
-    <option name="LAST_COMMIT_MESSAGE" value="found a few bugs, need to correct, finish readme, change Sjavac.java." />
+    <MESSAGE value="start debug tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="start debug tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -657,6 +664,11 @@
           <url>file://$PROJECT_DIR$/src/oop/ex6/syntax/TextParser.java</url>
           <line>48</line>
           <option name="timeStamp" value="162" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="163" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
