@@ -26,6 +26,11 @@ public class Sjavac {
         }
     }
 
+//    public static void main(String[] args){
+//        String fileName = args[0];
+//        System.out.println(RunTest(fileName));
+//    }
+
 
     private static void RunLineTest(String line) throws Exception {
         String[] tokens = line.split(" ");

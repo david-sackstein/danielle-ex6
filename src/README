@@ -1,7 +1,7 @@
 ellis.ackstein
 talia.dym
 
-**********maybe Type... in Variable?????
+
 
 **** design, focus on non trivial decisions ****
 
@@ -76,10 +76,14 @@ add new types:
     RegexDeclarations, RegexAssignment, RegexLiterals to support values of the new types.
     In particular, we will add conditions to the appropriate functions in order to support the
     special features of these type.
+    Implementation which supports simple adding of new type like Factory, was not possible to use,
+    because each type has different features, and the use of them is complicated and spread over many levels
+    in the code.
 
-Different methods’ return types
+Different methods return types:
+
 
 Using methods of standard java:
 
 
-**** 6.3 ****
+**** 6.3 - regular expressions****

@@ -1,13 +1,13 @@
 test001.sjavac 1 method definition has white space inside the name of the method (1).
 test002.sjavac 0 method definition with legal method name (0).
 test003.sjavac 1 assignment of a String value to a boolean variable (1).
-test004.sjavac 1 comment on the same line as } (1).
+test004.sjavac 0 method with out } in the end (1).
 test005.sjavac 1 method declaration with out a return statement in the end (1).
 test006.sjavac 0 assignment of a int value to a boolean variable (0).
 test007.sjavac 1 variable declaration with no ; in the end (1).
 test008.sjavac 1 variable declaration with illegal name (1).
 test009.sjavac 0 variable declaration with llegal name (0).
-test010.sjavac 0 comment with a space before the // (1). ????????????????
+test010.sjavac 0 comment with a space before the // (1). ????????????????- does work for int/char but not for space
 test011.sjavac 0 legal comment (0).
 test012.sjavac 1 legal calling method with args (0). ????????????????
 test013.sjavac 1 method declaration with 2 arguments sharing the same name (1).
