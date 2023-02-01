@@ -1,7 +1,9 @@
 package oop.ex6.strings;
 
 import static oop.ex6.strings.Primitives.*;
-
+/**
+ * This class defines the string constants for different types of declarations.
+ */
 public class Declarations {
     public static final String INT = build("int", Assignment.OPTIONAL_INT);
     public static final String STRING = build("String", Assignment.OPTIONAL_STRING);

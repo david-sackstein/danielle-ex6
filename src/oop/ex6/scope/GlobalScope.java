@@ -61,7 +61,6 @@ public class GlobalScope extends Scope {
         throwExceptionByCondition(()-> v != null, ILLEGAL_REDECLARE);
 
         globalVariables.add(variable);
-
         // remove from unresolved array
         ArrayList<Variable> removeArray = new ArrayList<>();
 

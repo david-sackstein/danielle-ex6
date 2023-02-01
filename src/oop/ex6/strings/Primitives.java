@@ -1,5 +1,5 @@
 package oop.ex6.strings;
-
+// The purpose of this class is to provide commonly used patterns that can be referenced in other classes.
 public class Primitives {
     public static final String WHITESPACES = "\\s*";
     public static final String DIGIT = "[0-9]";

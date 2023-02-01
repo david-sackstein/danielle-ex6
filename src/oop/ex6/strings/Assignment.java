@@ -1,7 +1,10 @@
 package oop.ex6.strings;
 
 import static oop.ex6.strings.Primitives.*;
-
+/**
+ * this class contains several fields and private helper methods to get a string representation of an
+ * assignment statement with different types and options.
+ */
 public class Assignment {
     public static final String INT_RIGHT_SIDE = getRightSide(Literals.INT);
     public static final String STRING_RIGHT_SIDE = getRightSide(Literals.STRING);
@@ -32,6 +35,7 @@ public class Assignment {
     }
 
     private static String getSingle(String rightSide) {
+
         return NAME_OF_VARIABLE + rightSide + WHITESPACES;
     }
 

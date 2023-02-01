@@ -1,7 +1,9 @@
 package oop.ex6.strings;
 
 import static oop.ex6.strings.Primitives.*;
-
+/**
+ * this class provides a regex pattern for conditions in code (if or while).
+ */
 public class Condition {
     public static final String EXPRESSION = getExpression();
     public static final String BLOCK = getBlock();

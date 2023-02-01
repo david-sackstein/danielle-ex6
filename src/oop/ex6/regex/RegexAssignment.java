@@ -4,6 +4,12 @@ import oop.ex6.strings.Assignment;
 
 import java.util.regex.Pattern;
 
+/**
+ * This class contains compiled regular expression patterns for checking various types of assignments in
+ * the program. The assignments include primitive types like int, double, boolean, char, and
+ * string, as well as the respective optional values for each type.
+ */
+
 public class RegexAssignment {
     public static final Pattern INT = Pattern.compile(Assignment.INT);
     public static final Pattern STRING = Pattern.compile(Assignment.STRING);
