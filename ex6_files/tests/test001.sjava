@@ -1,1 +1,1 @@
-int a;
+double a = 0.12;

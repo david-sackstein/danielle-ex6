@@ -2,9 +2,7 @@ package oop.ex6.strings;
 
 import static oop.ex6.strings.Primitives.*;
 
-/**
- * RegexStrings generates all the regex strings required by the RegexFactory
- */
+// this class contains regular expressions related to method declarations.
 public class MethodString {
 
     public static final String ARGUMENT = OPTIONAL_FINAL + ANY_TYPE + WHITESPACES + NAME_OF_VARIABLE;
@@ -12,7 +10,6 @@ public class MethodString {
 
     public static final String ARGUMENT_VALUE = getArgumentValue();
     public static final String CALL = getCall();
-
     private static String getDeclaration() {
         return Helper.getMethodOrCondition("void" + WHITESPACES + NAME_OF_METHOD, ARGUMENT,
                 ",", "?", "\\{");

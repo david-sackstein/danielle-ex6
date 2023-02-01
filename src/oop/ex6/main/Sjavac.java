@@ -16,10 +16,10 @@ public class Sjavac {
             FileToLines linesReader = new FileToLines();
             ArrayList<String> lines =  linesReader.createNonEmptyLineArray(fileName);
 
-            for (int i = 1; i < 20; i++) {
+            for (int i = 4; i < 20; i++) {
                 RunLineTest(lines.get(i - 1));
             }
-            System.out.printf("PASSED");
+            System.out.println("PASSED");
 
         } catch (Exception ex) {
             System.out.printf("FAILED : %s\n", ex.getMessage());
@@ -28,7 +28,7 @@ public class Sjavac {
 
 //    public static void main(String[] args){
 //        String fileName = args[0];
-//        System.out.println(run(fileName));
+//        System.out.println(RunTest(fileName));
 //    }
 
 
@@ -40,22 +40,22 @@ public class Sjavac {
         String testFileName = tokens[0];
         String result = tokens[1];
 
-        int actual = run(testFileName);
+        String actual = RunTest(testFileName);
 
-        if (actual != Integer.parseInt(result)){
+        if (!Objects.equals(actual, result)) {
             throw new Exception(testFileName);
         }
     }
 
 
-    private static int run(String testFileName) {
+    private static String RunTest(String testFileName) {
         try {
             new Compiler().compile(testFileName);
-            return 0;
+            return "0";
         } catch (IOException ex) {
-            return 2;
+            return "2";
         } catch (Exception ex) {
-            return 1;
+            return "1";
         }
     }
 

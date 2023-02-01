@@ -2,6 +2,7 @@ package oop.ex6.strings;
 
 import static oop.ex6.strings.Primitives.*;
 
+// this class contains a method that returns a regular expression that matches a method or a condition.
 public class Helper {
     public static String getMethodOrCondition(
         String openingToken, String listElement, String delimiter, String repeater, String closingToken) {
