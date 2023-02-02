@@ -65,7 +65,11 @@ public class Value {
             }
             Scope.throwExceptionByCondition(()->(Tokenizer.isNotNameOfVariable(rightSide)),
                     ILLEGAL_TYPE_NAME);
-            return Variable.getVariableInitializer(scope, rightSide, expectedType);
+
+            ArrayList<Type> types = new ArrayList<>();
+            types.add(expectedType);
+
+            return Variable.getVariableInitializer(scope, rightSide, types);
         }
         return null;
     }
@@ -79,7 +83,7 @@ public class Value {
     variable in the current scope using the provided argumentToken.
     If the variable is not found, an exception is thrown.
     If the variable is found, but it's not yet initialized, another exception is thrown.
-    If the variable is found and it's initialized, the method returns the corresponding Value object.
+    If the variable is found, and it's initialized, the method returns the corresponding Value object.
     @param scope The current scope
     @param argumentToken The string representation of the argument
     @return A typed Value object

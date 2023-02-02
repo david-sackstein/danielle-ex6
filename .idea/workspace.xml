@@ -2,10 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ea8df31-8c54-4d9a-a1f6-4e390e6c575b" name="Changes" comment="start debug tests">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex6_files/tests/test001.sjava" beforeDir="false" afterPath="$PROJECT_DIR$/ex6_files/tests/test001.sjava" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/exceptions/ExceptionMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/exceptions/ExceptionMessages.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test004.sjavac" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/test004.sjavac" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/tests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/testFiles/tests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/scope/GlobalScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/GlobalScope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/scope/ifOrWhile/IfWhileScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/ifOrWhile/IfWhileScope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/scope/method/Method.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/scope/method/Method.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/strings/Literals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/strings/Literals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/syntax/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/syntax/Compiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/syntax/SyntaxParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test001.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test002.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test003.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test004.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test005.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test006.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test007.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test008.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test009.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test010.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test011.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test012.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test013.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test014.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test015.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test016.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test017.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test018.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test019.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/test020.sjavac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/testFiles/tests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/variableDeclaration/Value.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/variableDeclaration/Value.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop/ex6/variableDeclaration/Variable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oop/ex6/variableDeclaration/Variable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,6 +274,9 @@
       <recent name="oop.ex6.regex.Literal" />
       <recent name="oop.ex6.regex.Declare" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/oop" />
+    </key>
     <key name="IntroduceConstantDialog.RECENTS_KEY">
       <recent name="oop.ex6.SyntaxAnalysis.LexicalAnalyzer" />
       <recent name="oop.ex6.SyntaxAnalysis.SyntaxAnalyzer" />
@@ -297,8 +332,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="oop.ex6.main.Sjavac" />
       <module name="ex6" />
-      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/src/oop/ex6/testFiles/tests.txt" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/oop/ex6/testFiles" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/src/oop/ex6/testFiles/test001.sjavac" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -630,7 +664,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Step 1" />
     <MESSAGE value="Step 2" />
     <MESSAGE value="Step 3" />
     <MESSAGE value="Step 4" />
@@ -655,7 +688,8 @@
     <MESSAGE value="Step 23" />
     <MESSAGE value="found a few bugs, need to correct, finish readme, change Sjavac.java." />
     <MESSAGE value="start debug tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="start debug tests" />
+    <MESSAGE value="talia end debug tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="talia end debug tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -664,11 +698,6 @@
           <url>file://$PROJECT_DIR$/src/oop/ex6/syntax/TextParser.java</url>
           <line>48</line>
           <option name="timeStamp" value="162" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="163" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

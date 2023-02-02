@@ -38,8 +38,6 @@ public class ExceptionMessages {
             "The variable was already declared, redeclaration is not allowed.";
     public static final String ASSIGNMENT_IN_GLOBAL_SCOPE =
             "Assignments in the global scope is not allowed.";
-    public static final String METHOD_CALL_IN_GLOBAL_SCOPE =
-            "Calling a method in the global scope is not allowed.";
     public static final String RETURN_IN_GLOBAL_SCOPE =
             "Return statement in global scope is not allowed.";
     public static final String END_SCOPE_GLOBAL_SCOPE =
@@ -57,7 +55,7 @@ public class ExceptionMessages {
                 variableType + " is not allowed";
     }
 
-    public static String useUnitializedVar(String varName){
+    public static String useUninitializedVar(String varName){
         return "use of variable " + varName + " is not allowed, because it was never initialized.";
     }
 

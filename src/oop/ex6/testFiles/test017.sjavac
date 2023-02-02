@@ -1,7 +1,0 @@
-foo(1);
-
-void foo(int a){
-return;
-}
-
-foo(9);

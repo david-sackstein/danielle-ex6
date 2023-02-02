@@ -104,19 +104,8 @@ public class GlobalScope extends Scope {
             throwExceptionByCondition(
                     ()-> (!methodCall.matchCallToMethod(method)), NO_METHOD_MATCHING_TO_CALL);
         }
-//        throwExceptionByCondition(()->methodsDeclaredLater(lines, methodCall), NO_METHOD_MATCHING_TO_CALL);
     }
 
-
-//    private boolean methodsDeclaredLater(ArrayList<String> lines, MethodCall methodCall){
-//        for (String line : lines){
-//            Method method = Method.lineToMethodScope(line, currentScope);
-//            if (method != null) {
-//                methodSignatures.add(method.getMethodSignature());
-//                return method;
-//            }
-//        }
-//    }
 
     /**
      * Searches for a Variable with the given name and type in the global scope

@@ -64,8 +64,12 @@ public class IfWhileScope extends NonGlobalScope {
 
                 Scope.throwExceptionByCondition(()->Tokenizer.isNotNameOfVariable(condition),
                     REGEX_FAIL);
-                Variable.getVariableInitializer(scope, condition,
-                        Type.Boolean, Type.Int, Type.Double);
+
+                ArrayList<Type> types = new ArrayList<>();
+                types.add(Type.Boolean);
+                types.add(Type.Int);
+                types.add(Type.Double);
+                Variable.getVariableInitializer(scope, condition, types);
             }
         }
         return IfWhileScope;

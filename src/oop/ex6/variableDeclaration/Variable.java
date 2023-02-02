@@ -120,11 +120,11 @@ public class Variable extends Value {
 
 
     /**
-     * create a variable given it's properties: name, type, final.
+     * create a variable given its properties: name, type, final.
      * @param hasFinal determines if the variable should be final.
      * @param type the type of the variable.
      * @param name the name of the variable.
-     * @return a variable given it's properties: name, type, final.
+     * @return a variable given its properties: name, type, final.
      * @throws Exception if the initialization is illegal.
      */
     private static Variable createVariable(boolean hasFinal, Type type, String name)  throws Exception {
@@ -144,7 +144,7 @@ public class Variable extends Value {
      has a different type than the assignment, or is not yet initialized.
      */
     public static Variable getVariableInitializer(
-            Scope scope, String variableName, Type... typeArray) throws Exception {
+            Scope scope, String variableName, ArrayList<Type> typeArray) throws Exception {
         for (Type type : typeArray) {
             Variable variable = scope.searchVariableInScope(variableName, type);
             if (variable != null){
@@ -153,7 +153,7 @@ public class Variable extends Value {
                         assignmentOfWrongTypes(type, variable.getType()));
 
                 Scope.throwExceptionByCondition(variable::notYetInitialized,
-                        useUnitializedVar(variableName));
+                        useUninitializedVar(variableName));
 
                 return variable;
             }

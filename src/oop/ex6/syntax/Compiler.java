@@ -12,13 +12,15 @@ public class Compiler {
     /**
      * Creates the global scope and parses each line in the specified file in that
      * context using a SyntaxAnalyzer.
-     * @param fileName
-     * @throws Exception
+     * @param fileName the name of the file we will go over its lines.
+     * @throws Exception will be thrown if one of the lines has illegal syntax,
+     * or if there is a problem with the file (IOException)
      */
     public void compile(String fileName) throws Exception {
         ArrayList<String> lines  = new FileToLines().createNonEmptyLineArray(fileName);
 
         SyntaxParser parser = new SyntaxParser();
+
         GlobalScope globalScope = new GlobalScope();
         Scope scope = globalScope;
 

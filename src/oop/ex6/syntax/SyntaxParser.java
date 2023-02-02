@@ -32,7 +32,7 @@ public class SyntaxParser {
      the list of methodSignatures.
      @return a boolean indicating whether all method calls have declarations (true) or not (false)
      */
-    private boolean allCallsHaveDeclerations(){
+    private boolean allCallsHaveDeclarations(){
         for (MethodCall call : methodCalls){
             if (!callHasDeclaration(call)){
                 return false;
@@ -69,7 +69,7 @@ public class SyntaxParser {
             throws Exception {
 
         if (nextLine == null){ //got to end of file
-            Scope.throwExceptionByCondition(()->!allCallsHaveDeclerations(), NO_METHOD_MATCHING_TO_CALL);
+            Scope.throwExceptionByCondition(()->!allCallsHaveDeclarations(), NO_METHOD_MATCHING_TO_CALL);
         }
 
         if (Tokenizer.isCommentOrEmptyLine(line)) {
@@ -188,12 +188,6 @@ public class SyntaxParser {
             scope.assignmentInScope(variable, Value.intialize(scope, part, type));
         }
     }
-
-//    private boolean allCallsHaveDeclerations(){
-//        for (MethodCall call : methodCalls){
-//
-//        }
-//    }
 
 
 
